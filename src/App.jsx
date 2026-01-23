@@ -3,7 +3,8 @@ import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import Header from './components/Header';
 import ArticleList from './components/ArticleList';
 import ArticleDetail from './components/ArticleDetail';
-import { getArticles, saveArticle } from './utils/storage';
+import Footer from './components/Footer';
+import { getArticles } from './utils/storage';
 import { articlesData } from './data/articles';
 
 function ArticleDetailPage() {
@@ -83,12 +84,15 @@ function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-luxury-cream">
+    <div className="min-h-screen bg-luxury-cream flex flex-col">
       <Header showNewButton={false} />
-      <ArticleList 
-        articles={articles} 
-        onReadMore={handleReadMore}
-      />
+      <main className="flex-grow">
+        <ArticleList 
+          articles={articles} 
+          onReadMore={handleReadMore}
+        />
+      </main>
+      <Footer />
     </div>
   );
 }

@@ -117,7 +117,7 @@ export const articlesData = [
     slug: "5-best-luxury-perfumes",
     content: perfumeArticleContent,
     imageUrl: perfumeBanner, // Using perfume banner as hero image
-    createdAt: new Date('2024-01-15').toISOString(),
+    createdAt: new Date().toISOString(), // Current date
   },
   // Add new articles here following the same structure
   // {

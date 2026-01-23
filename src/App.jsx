@@ -63,11 +63,9 @@ function HomePage() {
       const existingIndex = filteredArticles.findIndex(a => a.id === articleData.id);
       
       if (existingIndex >= 0) {
-        // Update existing article (preserve createdAt if it exists)
-        const existingArticle = filteredArticles[existingIndex];
+        // Update existing article with new data (use date from articleData)
         filteredArticles[existingIndex] = {
           ...articleData,
-          createdAt: existingArticle.createdAt || articleData.createdAt,
         };
       } else {
         // Add new article

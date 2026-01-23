@@ -8,6 +8,7 @@
  */
 
 import { generateArticleId } from '../utils/storage';
+import perfumeBanner from '../assets/perfume banner.png';
 import perfume1 from '../assets/perfume 1.png';
 import perfume2 from '../assets/perfume 2.png';
 import perfume3 from '../assets/perfume 3.png';
@@ -115,7 +116,7 @@ export const articlesData = [
     category: "Beauty",
     slug: "5-best-luxury-perfumes",
     content: perfumeArticleContent,
-    imageUrl: perfume1, // Using perfume 1 as hero image
+    imageUrl: perfumeBanner, // Using perfume banner as hero image
     createdAt: new Date('2024-01-15').toISOString(),
   },
   // Add new articles here following the same structure

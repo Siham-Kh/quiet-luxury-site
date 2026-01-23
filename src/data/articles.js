@@ -8,6 +8,11 @@
  */
 
 import { generateArticleId } from '../utils/storage';
+import perfume1 from '../assets/perfume 1.png';
+import perfume2 from '../assets/perfume 2.png';
+import perfume3 from '../assets/perfume 3.png';
+import perfume4 from '../assets/perfume 4.png';
+import perfume5 from '../assets/perfume 5.png';
 
 // Template for new articles:
 // {
@@ -20,17 +25,12 @@ import { generateArticleId } from '../utils/storage';
 //   createdAt: new Date().toISOString(),
 // }
 
-export const articlesData = [
-  {
-    id: 'perfume-article', // Fixed ID so it updates instead of creating duplicates
-    title: "The 5 Best Luxury Perfumes for Every Occasion: A Curated Guide",
-    category: "Beauty",
-    slug: "5-best-luxury-perfumes",
-    content: `In the world of quiet luxury, a signature scent speaks volumes without saying a word. The right fragrance can elevate your presence, create lasting impressions, and become an extension of your personal style. After extensive testing and consideration of sillage, longevity, and sophistication, I've curated the definitive guide to the five best luxury perfumes for every occasion in your life.
+// Build content with image URLs
+const perfumeArticleContent = `In the world of quiet luxury, a signature scent speaks volumes without saying a word. The right fragrance can elevate your presence, create lasting impressions, and become an extension of your personal style. After extensive testing and consideration of sillage, longevity, and sophistication, I've curated the definitive guide to the five best luxury perfumes for every occasion in your life.
 
 ## 1. For the Office: Maison Francis Kurkdjian – Aqua Universalis
 
-![Maison Francis Kurkdjian Aqua Universalis - The perfect office fragrance](https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&h=600&fit=crop&q=80)
+![Maison Francis Kurkdjian Aqua Universalis - The perfect office fragrance](${perfume1})
 
 Maison Francis Kurkdjian's Aqua Universalis delivers understated elegance for professional settings. A unisex fragrance with 8-10 hour longevity, it features a clean white floral composition.
 
@@ -46,7 +46,7 @@ Maison Francis Kurkdjian's Aqua Universalis delivers understated elegance for pr
 
 ## 2. For Daily Use: Parfums de Marly – Valaya
 
-![Parfums de Marly Valaya - The everyday luxury scent](https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=800&h=600&fit=crop&q=80)
+![Parfums de Marly Valaya - The everyday luxury scent](${perfume2})
 
 Parfums de Marly's Valaya offers everyday luxury with 6-8 hour wear. A feminine floral fragrance inspired by the elegance of French royalty.
 
@@ -62,7 +62,7 @@ Parfums de Marly's Valaya offers everyday luxury with 6-8 hour wear. A feminine 
 
 ## 3. For Date Night: Parfums de Marly – Delina Exclusif
 
-![Parfums de Marly Delina Exclusif - The unforgettable evening fragrance](https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&h=600&fit=crop&q=80)
+![Parfums de Marly Delina Exclusif - The unforgettable evening fragrance](${perfume3})
 
 Parfums de Marly's Delina Exclusif delivers unforgettable sophistication for special occasions. An intense, long-lasting (10-12 hours) rose-oud fragrance with exceptional sillage.
 
@@ -78,7 +78,7 @@ Parfums de Marly's Delina Exclusif delivers unforgettable sophistication for spe
 
 ## 4. For Hot Weather: Creed – Millésime Impérial
 
-![Creed Millésime Impérial - The perfect summer fragrance](https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&h=600&fit=crop&q=80)
+![Creed Millésime Impérial - The perfect summer fragrance](${perfume4})
 
 Creed's Millésime Impérial offers a refreshing Mediterranean coastal vibe perfect for hot weather. A unisex aquatic fragrance with 6-8 hour longevity, designed to perform in heat.
 
@@ -94,7 +94,7 @@ Creed's Millésime Impérial offers a refreshing Mediterranean coastal vibe perf
 
 ## 5. For Going Out: Maison Francis Kurkdjian – Baccarat Rouge 540
 
-![Maison Francis Kurkdjian Baccarat Rouge 540 - The mysterious night fragrance](https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&h=600&fit=crop&q=80)
+![Maison Francis Kurkdjian Baccarat Rouge 540 - The mysterious night fragrance](${perfume5})
 
 Maison Francis Kurkdjian's Baccarat Rouge 540 delivers captivating sophistication for evening occasions. An amber floral with exceptional 12+ hour longevity and powerful sillage.
 
@@ -106,8 +106,16 @@ Maison Francis Kurkdjian's Baccarat Rouge 540 delivers captivating sophisticatio
 
 **Best for:** Evening events, nightlife, parties, special occasions, when you want maximum impact.
 
-[SHOP_BACCARAT_ROUGE_540](https://amzn.to/4sWT4Wg)`,
-    imageUrl: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=1200&h=800&fit=crop&q=80",
+[SHOP_BACCARAT_ROUGE_540](https://amzn.to/4sWT4Wg)`;
+
+export const articlesData = [
+  {
+    id: 'perfume-article', // Fixed ID so it updates instead of creating duplicates
+    title: "The 5 Best Luxury Perfumes for Every Occasion: A Curated Guide",
+    category: "Beauty",
+    slug: "5-best-luxury-perfumes",
+    content: perfumeArticleContent,
+    imageUrl: perfume1, // Using perfume 1 as hero image
     createdAt: new Date('2024-01-15').toISOString(),
   },
   // Add new articles here following the same structure

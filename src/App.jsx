@@ -46,27 +46,38 @@ function HomePage() {
     // Load articles from localStorage
     const loadedArticles = getArticles();
     
+    // Remove any old perfume articles that might have different IDs
+    // This prevents duplicates when the article ID changes
+    const filteredArticles = loadedArticles.filter(article => {
+      // Keep articles that match current IDs in articlesData
+      const isCurrentArticle = articlesData.some(ad => ad.id === article.id);
+      // Remove old perfume articles that don't match current ID
+      const isOldPerfumeArticle = article.title.includes('5 Best Luxury Perfumes') && 
+                                   !articlesData.some(ad => ad.id === article.id);
+      return isCurrentArticle || !isOldPerfumeArticle;
+    });
+    
     // Sync articlesData with localStorage
     // This ensures articles in the data file are always up-to-date
     articlesData.forEach(articleData => {
-      const existingIndex = loadedArticles.findIndex(a => a.id === articleData.id);
+      const existingIndex = filteredArticles.findIndex(a => a.id === articleData.id);
       
       if (existingIndex >= 0) {
         // Update existing article (preserve createdAt if it exists)
-        const existingArticle = loadedArticles[existingIndex];
-        loadedArticles[existingIndex] = {
+        const existingArticle = filteredArticles[existingIndex];
+        filteredArticles[existingIndex] = {
           ...articleData,
           createdAt: existingArticle.createdAt || articleData.createdAt,
         };
       } else {
         // Add new article
-        loadedArticles.push(articleData);
+        filteredArticles.push(articleData);
       }
     });
     
     // Save updated articles to localStorage
-    localStorage.setItem('quiet-luxury-articles', JSON.stringify(loadedArticles));
-    setArticles(loadedArticles);
+    localStorage.setItem('quiet-luxury-articles', JSON.stringify(filteredArticles));
+    setArticles(filteredArticles);
   }, []);
 
   const handleReadMore = (article) => {

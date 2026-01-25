@@ -10,10 +10,10 @@ const ArticleDetail = ({ article, onBack }) => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
       <button
         onClick={onBack}
-        className="mb-8 group flex items-center gap-2 text-sm font-medium text-luxury-taupe hover:text-luxury-charcoal transition-all duration-300"
+        className="mb-6 sm:mb-8 group flex items-center gap-2 text-sm font-medium text-luxury-taupe hover:text-luxury-charcoal transition-all duration-300 touch-target"
       >
         <span className="transform group-hover:-translate-x-1 transition-transform duration-300">←</span>
         <span>Back to articles</span>
@@ -21,7 +21,7 @@ const ArticleDetail = ({ article, onBack }) => {
 
       <article className="bg-white rounded-2xl shadow-xl border border-luxury-beige overflow-hidden backdrop-blur-sm">
         {article.imageUrl && (
-          <div className="w-full h-[700px] overflow-hidden bg-gradient-to-br from-luxury-beige to-luxury-cream relative">
+          <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px] overflow-hidden bg-gradient-to-br from-luxury-beige to-luxury-cream relative">
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
             <img
               src={article.imageUrl}
@@ -34,17 +34,17 @@ const ArticleDetail = ({ article, onBack }) => {
           </div>
         )}
 
-        <div className="p-10 lg:p-12">
-          <div className="flex items-center justify-between mb-6">
-            <span className="inline-block px-4 py-2 text-xs font-semibold tracking-wider text-luxury-charcoal bg-gradient-to-r from-luxury-beige to-luxury-cream rounded-full uppercase">
+        <div className="p-4 sm:p-6 md:p-8 lg:p-12">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 mb-4 sm:mb-6">
+            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 text-xs font-semibold tracking-wider text-luxury-charcoal bg-gradient-to-r from-luxury-beige to-luxury-cream rounded-full uppercase">
               {article.category}
             </span>
-            <time className="text-sm font-medium text-luxury-taupe">
+            <time className="text-xs sm:text-sm font-medium text-luxury-taupe">
               {formatDate(article.createdAt)}
             </time>
           </div>
 
-          <h1 className="text-5xl lg:text-6xl font-serif text-luxury-charcoal mb-8 leading-tight tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-luxury-charcoal mb-6 sm:mb-8 leading-tight tracking-tight">
             {article.title}
           </h1>
 
@@ -72,10 +72,10 @@ const ArticleDetail = ({ article, onBack }) => {
                       if (currentSectionImage) {
                         // Section with image - use image+content layout
                         processedLines.push(
-                          <div key={`section-${i}`} className="my-20 grid grid-cols-1 lg:grid-cols-12 gap-10">
-                            <div className="lg:col-span-5">
-                              <div className="sticky top-8">
-                                <div className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                          <div key={`section-${i}`} className="my-12 sm:my-16 lg:my-20 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
+                            <div className="lg:col-span-5 order-2 lg:order-1">
+                              <div className="lg:sticky lg:top-8">
+                                <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
                                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                                   <img 
                                     src={currentSectionImage.src} 
@@ -88,11 +88,11 @@ const ArticleDetail = ({ article, onBack }) => {
                                 </div>
                               </div>
                             </div>
-                            <div className="lg:col-span-7">
-                              <div className="space-y-6">
+                            <div className="lg:col-span-7 order-1 lg:order-2">
+                              <div className="space-y-4 sm:space-y-6">
                                 {currentSectionContent}
                                 {currentSectionButton && (
-                                  <div className="mt-8 pt-6">
+                                  <div className="mt-6 sm:mt-8 pt-4 sm:pt-6">
                                     {currentSectionButton}
                                   </div>
                                 )}
@@ -123,8 +123,8 @@ const ArticleDetail = ({ article, onBack }) => {
                     if (isClosingSection) {
                       // Closing section - full width, no image layout, with prominent separator line
                       processedLines.push(
-                        <div key={`closing-${i}`} className="my-20 pt-12 border-t-2 border-luxury-charcoal border-opacity-20">
-                          <h2 className="text-4xl lg:text-5xl font-serif text-luxury-charcoal mb-8 mt-8">
+                        <div key={`closing-${i}`} className="my-12 sm:my-16 lg:my-20 pt-8 sm:pt-10 lg:pt-12 border-t-2 border-luxury-charcoal border-opacity-20">
+                          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-luxury-charcoal mb-6 sm:mb-8 mt-6 sm:mt-8">
                             {sectionTitle}
                           </h2>
                         </div>
@@ -162,10 +162,10 @@ const ArticleDetail = ({ article, onBack }) => {
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-gradient-to-r from-luxury-charcoal via-gray-800 to-luxury-charcoal text-white rounded-full hover:shadow-2xl transition-all duration-300 font-medium tracking-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base"
+                        className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-gradient-to-r from-luxury-charcoal via-gray-800 to-luxury-charcoal text-white rounded-full hover:shadow-2xl transition-all duration-300 font-medium tracking-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm sm:text-base"
                       >
                         <span>Shop {displayName}</span>
-                        <span className="transform group-hover:translate-x-2 transition-transform duration-300 text-lg">→</span>
+                        <span className="transform group-hover:translate-x-2 transition-transform duration-300 text-base sm:text-lg">→</span>
                       </a>
                     );
                     continue;
@@ -219,10 +219,10 @@ const ArticleDetail = ({ article, onBack }) => {
                   if (currentSectionImage) {
                     // Section with image - use image+content layout
                     processedLines.push(
-                      <div key="section-final" className="my-20 grid grid-cols-1 lg:grid-cols-12 gap-10">
-                        <div className="lg:col-span-5">
-                          <div className="sticky top-8">
-                            <div className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                      <div key="section-final" className="my-12 sm:my-16 lg:my-20 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
+                        <div className="lg:col-span-5 order-2 lg:order-1">
+                          <div className="lg:sticky lg:top-8">
+                            <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
                               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                               <img 
                                 src={currentSectionImage.src} 
@@ -235,11 +235,11 @@ const ArticleDetail = ({ article, onBack }) => {
                             </div>
                           </div>
                         </div>
-                        <div className="lg:col-span-7">
-                          <div className="space-y-6">
+                        <div className="lg:col-span-7 order-1 lg:order-2">
+                          <div className="space-y-4 sm:space-y-6">
                             {currentSectionContent}
                             {currentSectionButton && (
-                              <div className="mt-8 pt-6">
+                              <div className="mt-6 sm:mt-8 pt-4 sm:pt-6">
                                 {currentSectionButton}
                               </div>
                             )}
@@ -251,10 +251,10 @@ const ArticleDetail = ({ article, onBack }) => {
                     // Section without image - render as full-width content
                     processedLines.push(
                       <div key="section-final-no-image" className="my-12">
-                        <div className="space-y-6">
+                        <div className="space-y-4 sm:space-y-6">
                           {currentSectionContent}
                           {currentSectionButton && (
-                            <div className="mt-8 pt-6">
+                            <div className="mt-6 sm:mt-8 pt-4 sm:pt-6">
                               {currentSectionButton}
                             </div>
                           )}

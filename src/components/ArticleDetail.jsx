@@ -21,12 +21,12 @@ const ArticleDetail = ({ article, onBack }) => {
 
       <article className="bg-white rounded-2xl shadow-xl border border-luxury-beige overflow-hidden backdrop-blur-sm">
         {article.imageUrl && (
-          <div className="w-full h-[500px] overflow-hidden bg-gradient-to-br from-luxury-beige to-luxury-cream relative">
+          <div className="w-full h-[700px] overflow-hidden bg-gradient-to-br from-luxury-beige to-luxury-cream relative">
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
             <img
               src={article.imageUrl}
               alt={article.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               onError={(e) => {
                 e.target.style.display = 'none';
               }}
@@ -67,26 +67,43 @@ const ArticleDetail = ({ article, onBack }) => {
                     const sectionTitle = line.substring(3);
                     isClosingSection = sectionTitle.includes('Art of Choosing') || sectionTitle.includes('Conclusion');
                     
-                    // If we have a previous section with image and content, render it
-                    if (inSection && currentSectionImage && currentSectionContent.length > 0) {
-                      processedLines.push(
-                        <div key={`section-${i}`} className="my-20 grid grid-cols-1 lg:grid-cols-12 gap-10">
-                          <div className="lg:col-span-4">
-                            <div className="sticky top-8">
-                              <div className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-                                <img 
-                                  src={currentSectionImage.src} 
-                                  alt={currentSectionImage.alt} 
-                                  className="w-full aspect-[9/16] object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                  onError={(e) => {
-                                    e.target.style.display = 'none';
-                                  }}
-                                />
+                    // If we have a previous section with content, render it
+                    if (inSection && currentSectionContent.length > 0) {
+                      if (currentSectionImage) {
+                        // Section with image - use image+content layout
+                        processedLines.push(
+                          <div key={`section-${i}`} className="my-20 grid grid-cols-1 lg:grid-cols-12 gap-10">
+                            <div className="lg:col-span-5">
+                              <div className="sticky top-8">
+                                <div className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                                  <img 
+                                    src={currentSectionImage.src} 
+                                    alt={currentSectionImage.alt} 
+                                    className="w-full aspect-[9/16] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                    onError={(e) => {
+                                      e.target.style.display = 'none';
+                                    }}
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div className="lg:col-span-7">
+                              <div className="space-y-6">
+                                {currentSectionContent}
+                                {currentSectionButton && (
+                                  <div className="mt-8 pt-6">
+                                    {currentSectionButton}
+                                  </div>
+                                )}
                               </div>
                             </div>
                           </div>
-                          <div className="lg:col-span-8">
+                        );
+                      } else {
+                        // Section without image - render as full-width content
+                        processedLines.push(
+                          <div key={`section-no-image-${i}`} className="my-12">
                             <div className="space-y-6">
                               {currentSectionContent}
                               {currentSectionButton && (
@@ -96,8 +113,8 @@ const ArticleDetail = ({ article, onBack }) => {
                               )}
                             </div>
                           </div>
-                        </div>
-                      );
+                        );
+                      }
                     }
                     
                     // Start new section
@@ -198,25 +215,42 @@ const ArticleDetail = ({ article, onBack }) => {
                 }
                 
                 // Render last section if it exists (only if it's not a closing section)
-                if (inSection && !isClosingSection && currentSectionImage && currentSectionContent.length > 0) {
-                  processedLines.push(
-                    <div key="section-final" className="my-20 grid grid-cols-1 lg:grid-cols-12 gap-10">
-                      <div className="lg:col-span-4">
-                        <div className="sticky top-8">
-                          <div className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-                            <img 
-                              src={currentSectionImage.src} 
-                              alt={currentSectionImage.alt} 
-                              className="w-full aspect-[9/16] object-cover transform group-hover:scale-105 transition-transform duration-700"
-                              onError={(e) => {
-                                e.target.style.display = 'none';
-                              }}
-                            />
+                if (inSection && !isClosingSection && currentSectionContent.length > 0) {
+                  if (currentSectionImage) {
+                    // Section with image - use image+content layout
+                    processedLines.push(
+                      <div key="section-final" className="my-20 grid grid-cols-1 lg:grid-cols-12 gap-10">
+                        <div className="lg:col-span-5">
+                          <div className="sticky top-8">
+                            <div className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                              <img 
+                                src={currentSectionImage.src} 
+                                alt={currentSectionImage.alt} 
+                                className="w-full aspect-[9/16] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                onError={(e) => {
+                                  e.target.style.display = 'none';
+                                }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="lg:col-span-7">
+                          <div className="space-y-6">
+                            {currentSectionContent}
+                            {currentSectionButton && (
+                              <div className="mt-8 pt-6">
+                                {currentSectionButton}
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
-                      <div className="lg:col-span-8">
+                    );
+                  } else {
+                    // Section without image - render as full-width content
+                    processedLines.push(
+                      <div key="section-final-no-image" className="my-12">
                         <div className="space-y-6">
                           {currentSectionContent}
                           {currentSectionButton && (
@@ -226,8 +260,8 @@ const ArticleDetail = ({ article, onBack }) => {
                           )}
                         </div>
                       </div>
-                    </div>
-                  );
+                    );
+                  }
                 } else if (inSection && isClosingSection && currentSectionContent.length > 0) {
                   // Handle closing section content that wasn't rendered yet
                   // This shouldn't happen since closing section content is rendered directly

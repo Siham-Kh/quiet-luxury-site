@@ -20,12 +20,14 @@ import bag3 from '../assets/bag 3.png';
 import bag4 from '../assets/bag 4.png';
 import bag5 from '../assets/bag 5.png';
 import banner2 from '../assets/banner 2.png';
+import banner3 from '../assets/banner 3.png';
 import cleanserImage from '../assets/cleanser.png';
 import tonerImage from '../assets/toner.png';
 import serumsImage from '../assets/serums.png';
 import moisturizersImage from '../assets/moisturizers.png';
 import lipImage from '../assets/lip.png';
 import toolsImage from '../assets/tools.png';
+import sunscreenImage from '../assets/sunscreen.png';
 
 // Template for new articles:
 // {
@@ -359,33 +361,33 @@ Use for 5 minutes at night while listening to music or a podcast.
 
 • Facial massage wand for circulation
 
-[SHOP_ICE_ROLLER](https://amzn.to/example)
+[SHOP_ICE_ROLLER](https://amzn.to/3LUyWTJ)
 
-[SHOP_GUA_SHA](https://amzn.to/example)
+[SHOP_GUA_SHA](https://amzn.to/4a0gXU8)
 
-[SHOP_FACIAL_MASSAGE_WAND](https://amzn.to/example)
+[SHOP_FACIAL_MASSAGE_WAND](https://amzn.to/3NDFZRo)
 
 ## Sunscreen Is the Ultimate Glow Protector
 
-![Glowy Sunscreen](https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&h=800&fit=crop)
+![Glowy Sunscreen](${sunscreenImage})
 
 Nothing ruins glow faster than sun damage. Soft girl skin always looks youthful because SPF is applied daily, even indoors.
 
 **Lightweight, glowy SPFs:**
 
-• Beauty of Joseon Relief Sun
+• Isntree Hyaluronic Acid Watery Sun Gel
 
-• Supergoop Glow Screen
+• ROUND LAB Birch Juice Moisturizing UV LOCK SPF 45
 
-• La Roche-Posay Anthelios Melt-In Milk
+• SKIN1004 Madagascar Centella Hyalu-Cica Water-Fit Sun Serum
 
 Apply generously—glow starts with protection.
 
-[SHOP_BEAUTY_OF_JOSEON_SUNSCREEN](https://amzn.to/example)
+[SHOP_ISNTREE_SUN_GEL](https://amzn.to/4af2F3a)
 
-[SHOP_SUPERGOOP_SUNSCREEN](https://amzn.to/example)
+[SHOP_ROUND_LAB_UV_LOCK](https://amzn.to/4pZckQ6)
 
-[SHOP_LA_ROCHE_POSAY_SUNSCREEN](https://amzn.to/example)
+[SHOP_SKIN1004_SUN_SERUM](https://amzn.to/4sWXUm6)
 
 ## Soft Girl Night Routine
 
@@ -422,7 +424,7 @@ export const articlesData = [
     category: "Beauty",
     slug: "soft-girl-glow-up-skincare-2026",
     content: softGirlGlowUpContent,
-    imageUrl: "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=1200&h=800&fit=crop",
+    imageUrl: banner3,
     createdAt: new Date().toISOString(),
   },
 ];

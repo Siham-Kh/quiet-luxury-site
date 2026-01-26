@@ -55,7 +55,7 @@ const ArticleDetail = ({ article, onBack }) => {
                 const processedLines = [];
                 let currentSectionContent = [];
                 let currentSectionImage = null;
-                let currentSectionButton = null;
+                let currentSectionButtons = [];
                 let inSection = false;
                 let isClosingSection = false;
                 
@@ -73,7 +73,7 @@ const ArticleDetail = ({ article, onBack }) => {
                         // Section with image - use image+content layout
                         processedLines.push(
                           <div key={`section-${i}`} className="my-12 sm:my-16 lg:my-20 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
-                            <div className="lg:col-span-5 order-2 lg:order-1">
+                            <div className="lg:col-span-6 order-2 lg:order-1">
                               <div className="lg:sticky lg:top-8">
                                 <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
                                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
@@ -88,12 +88,12 @@ const ArticleDetail = ({ article, onBack }) => {
                                 </div>
                               </div>
                             </div>
-                            <div className="lg:col-span-7 order-1 lg:order-2">
+                            <div className="lg:col-span-6 order-1 lg:order-2">
                               <div className="space-y-4 sm:space-y-6">
                                 {currentSectionContent}
-                                {currentSectionButton && (
-                                  <div className="mt-6 sm:mt-8 pt-4 sm:pt-6">
-                                    {currentSectionButton}
+                                {currentSectionButtons.length > 0 && (
+                                  <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                                    {currentSectionButtons}
                                   </div>
                                 )}
                               </div>
@@ -104,14 +104,14 @@ const ArticleDetail = ({ article, onBack }) => {
                         // Section without image - render as full-width content
                         processedLines.push(
                           <div key={`section-no-image-${i}`} className="my-12">
-                            <div className="space-y-6">
-                              {currentSectionContent}
-                              {currentSectionButton && (
-                                <div className="mt-8 pt-6">
-                                  {currentSectionButton}
-                                </div>
-                              )}
+                        <div className="space-y-6">
+                          {currentSectionContent}
+                          {currentSectionButtons.length > 0 && (
+                            <div className="mt-8 pt-6 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                              {currentSectionButtons}
                             </div>
+                          )}
+                        </div>
                           </div>
                         );
                       }
@@ -139,7 +139,7 @@ const ArticleDetail = ({ article, onBack }) => {
                     
                     currentSectionContent = [];
                     currentSectionImage = null;
-                    currentSectionButton = null;
+                    currentSectionButtons = [];
                     inSection = true;
                     continue;
                   }
@@ -157,8 +157,9 @@ const ArticleDetail = ({ article, onBack }) => {
                   if (affiliateMatch) {
                     const [, productName, url] = affiliateMatch;
                     const displayName = productName.replace(/_/g, ' ');
-                    currentSectionButton = (
+                    currentSectionButtons.push(
                       <a
+                        key={`button-${i}`}
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -220,7 +221,7 @@ const ArticleDetail = ({ article, onBack }) => {
                     // Section with image - use image+content layout
                     processedLines.push(
                       <div key="section-final" className="my-12 sm:my-16 lg:my-20 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
-                        <div className="lg:col-span-5 order-2 lg:order-1">
+                        <div className="lg:col-span-6 order-2 lg:order-1">
                           <div className="lg:sticky lg:top-8">
                             <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
                               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
@@ -235,12 +236,12 @@ const ArticleDetail = ({ article, onBack }) => {
                             </div>
                           </div>
                         </div>
-                        <div className="lg:col-span-7 order-1 lg:order-2">
+                        <div className="lg:col-span-6 order-1 lg:order-2">
                           <div className="space-y-4 sm:space-y-6">
                             {currentSectionContent}
-                            {currentSectionButton && (
-                              <div className="mt-6 sm:mt-8 pt-4 sm:pt-6">
-                                {currentSectionButton}
+                            {currentSectionButtons.length > 0 && (
+                              <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                                {currentSectionButtons}
                               </div>
                             )}
                           </div>
@@ -253,9 +254,9 @@ const ArticleDetail = ({ article, onBack }) => {
                       <div key="section-final-no-image" className="my-12">
                         <div className="space-y-4 sm:space-y-6">
                           {currentSectionContent}
-                          {currentSectionButton && (
-                            <div className="mt-6 sm:mt-8 pt-4 sm:pt-6">
-                              {currentSectionButton}
+                          {currentSectionButtons.length > 0 && (
+                            <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                              {currentSectionButtons}
                             </div>
                           )}
                         </div>

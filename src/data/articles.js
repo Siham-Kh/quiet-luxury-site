@@ -20,6 +20,8 @@ import bag3 from '../assets/bag 3.png';
 import bag4 from '../assets/bag 4.png';
 import bag5 from '../assets/bag 5.png';
 import banner2 from '../assets/banner 2.png';
+import cleanserImage from '../assets/cleanser.png';
+import tonerImage from '../assets/toner.png';
 
 // Template for new articles:
 // {
@@ -215,31 +217,55 @@ The soft girl glow up is all about dewy, hydrated skin achieved through gentle r
 
 ## Start With a Gentle, Milky Cleanser
 
-![Gentle Milky Cleanser](https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&h=800&fit=crop)
+![Gentle Milky Cleanser](${cleanserImage})
 
 Soft girl skin always starts with a non-stripping cleanser. Harsh foaming cleansers ruin glow by damaging the skin barrier. In 2026, the trend is creamy, low-pH cleansers that leave skin soft and calm.
 
 **Look for:** Milky or lotion textures, ceramides, glycerin, and no strong fragrance.
 
-**Aesthetic-friendly picks:** La Roche-Posay Toleriane Hydrating Cleanser, Byoma Creamy Jelly Cleanser, or Glossier Milky Jelly Cleanser.
+**Aesthetic-friendly picks:**
+
+• SKIN1004 Madagascar Centella Ampoule Foam
+
+• ROUND LAB 1025 Dokdo Cleanser
+
+• ANUA Heartleaf Quercetinol Pore Deep Cleansing Foam
+
+• medicube Facial Cleanser Zero Pore Capsule Cleansing Foam
 
 **Tip:** Cleanse slowly. Massage for at least 30 seconds—this improves circulation and glow.
 
-[SHOP_GENTLE_CLEANSER](https://amzn.to/example)
+[SHOP_SKIN1004_CENTELLA_CLEANSER](https://amzn.to/3O5uD8M)
+
+[SHOP_ROUND_LAB_DOKDO_CLEANSER](https://amzn.to/4sZ9c9r)
+
+[SHOP_ANUA_HEARTLEAF_CLEANSER](https://amzn.to/4adUUKP)
+
+[SHOP_MEDICUBE_ZERO_PORE_CLEANSER](https://amzn.to/4rhq0Hi)
 
 ## Hydration Is the New Glow Secret
 
-![Hydrating Toner](https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=800&fit=crop)
+![Hydrating Toner](${tonerImage})
 
 Soft girl glow is hydration-based, not exfoliation-based. Instead of using acids daily, people are layering hydrating toners and essences for plump, glassy skin.
 
 **Trending ingredients in 2026:** Hyaluronic acid, rice extract, panthenol, and beta-glucan.
 
-**Beautiful, glow-boosting options:** Laneige Cream Skin Toner, I'm From Rice Toner, or Round Lab Dokdo Toner.
+**Beautiful, glow-boosting options:**
+
+• ROUND LAB 1025 Dokdo Toner
+
+• LANEIGE Cream Skin Toner & Moisturizer
+
+• SKIN1004 Centella Toning Toner
 
 Apply with hands—never cotton pads—to keep the skin calm and juicy.
 
-[SHOP_HYDRATING_TONER](https://amzn.to/example)
+[SHOP_ROUND_LAB_DOKDO_TONER](https://amzn.to/45xXdWp)
+
+[SHOP_LANEIGE_CREAM_SKIN_TONER](https://amzn.to/4qMGvvc)
+
+[SHOP_SKIN1004_CENTELLA_TONER](https://amzn.to/4q2Vy2C)
 
 ## Use a Glow Serum
 
@@ -249,11 +275,21 @@ Soft girl routines stay simple: one glow serum only. The goal is radiance, not i
 
 **Best glow ingredients:** Niacinamide (low percentage), vitamin C derivatives, and peptides.
 
-**Popular glow serums people love in 2026:** Glow Recipe Niacinamide Dew Drops, The Ordinary Multi-Peptide + HA Serum, or Naturium Vitamin C Complex Serum.
+**Popular glow serums people love in 2026:**
+
+• Glow Recipe Niacinamide Dew Drops
+
+• The Ordinary Multi-Peptide + HA Serum
+
+• Naturium Vitamin C Complex Serum
 
 **Tip:** Apply serum while skin is slightly damp for maximum glow.
 
-[SHOP_GLOW_SERUM](https://amzn.to/example)
+[SHOP_GLOW_RECIPE_SERUM](https://amzn.to/example)
+
+[SHOP_THE_ORDINARY_SERUM](https://amzn.to/example)
+
+[SHOP_NATURIUM_SERUM](https://amzn.to/example)
 
 ## Seal Everything With a Dewy Moisturizer
 
@@ -263,11 +299,21 @@ This step is essential. Soft girl skin always looks bouncy, plush, and moisturiz
 
 **Look for moisturizers with:** Ceramides, squalane, shea butter, and barrier-repair ingredients.
 
-**Soft girl favorites:** Summer Fridays Jet Lag Mask (used as moisturizer), La Roche-Posay Cicaplast Baume B5, or Drunk Elephant Protini Cream.
+**Soft girl favorites:**
+
+• Summer Fridays Jet Lag Mask (used as moisturizer)
+
+• La Roche-Posay Cicaplast Baume B5
+
+• Drunk Elephant Protini Cream
 
 This step is what gives that "your skin but better" finish.
 
-[SHOP_DEWY_MOISTURIZER](https://amzn.to/example)
+[SHOP_SUMMER_FRIDAYS_MOISTURIZER](https://amzn.to/example)
+
+[SHOP_LA_ROCHE_POSAY_MOISTURIZER](https://amzn.to/example)
+
+[SHOP_DRUNK_ELEPHANT_MOISTURIZER](https://amzn.to/example)
 
 ## Lip Care Is Part of the Glow Up
 
@@ -275,11 +321,21 @@ This step is what gives that "your skin but better" finish.
 
 Soft girl glow includes soft, glossy lips—always. Lip care is non-negotiable in 2026 routines.
 
-**Must-have lip products:** Laneige Lip Sleeping Mask, Summer Fridays Lip Butter Balm, or Rhode Peptide Lip Treatment.
+**Must-have lip products:**
+
+• Laneige Lip Sleeping Mask
+
+• Summer Fridays Lip Butter Balm
+
+• Rhode Peptide Lip Treatment
 
 Apply before bed and again in the morning for a naturally plump look.
 
-[SHOP_LIP_CARE](https://amzn.to/example)
+[SHOP_LANEIGE_LIP_MASK](https://amzn.to/example)
+
+[SHOP_SUMMER_FRIDAYS_LIP_BALM](https://amzn.to/example)
+
+[SHOP_RHODE_LIP_TREATMENT](https://amzn.to/example)
 
 ## Add One Aesthetic Beauty Tool
 
@@ -291,7 +347,19 @@ You don't need many tools—just one. Popular soft girl tools include ice roller
 
 Use for 5 minutes at night while listening to music or a podcast.
 
-[SHOP_BEAUTY_TOOLS](https://amzn.to/example)
+**Popular options:**
+
+• Ice roller for reducing puffiness
+
+• Rose quartz gua sha for facial massage
+
+• Facial massage wand for circulation
+
+[SHOP_ICE_ROLLER](https://amzn.to/example)
+
+[SHOP_GUA_SHA](https://amzn.to/example)
+
+[SHOP_FACIAL_MASSAGE_WAND](https://amzn.to/example)
 
 ## Sunscreen Is the Ultimate Glow Protector
 
@@ -299,11 +367,21 @@ Use for 5 minutes at night while listening to music or a podcast.
 
 Nothing ruins glow faster than sun damage. Soft girl skin always looks youthful because SPF is applied daily, even indoors.
 
-**Lightweight, glowy SPFs:** Beauty of Joseon Relief Sun, Supergoop Glow Screen, or La Roche-Posay Anthelios Melt-In Milk.
+**Lightweight, glowy SPFs:**
+
+• Beauty of Joseon Relief Sun
+
+• Supergoop Glow Screen
+
+• La Roche-Posay Anthelios Melt-In Milk
 
 Apply generously—glow starts with protection.
 
-[SHOP_SUNSCREEN](https://amzn.to/example)
+[SHOP_BEAUTY_OF_JOSEON_SUNSCREEN](https://amzn.to/example)
+
+[SHOP_SUPERGOOP_SUNSCREEN](https://amzn.to/example)
+
+[SHOP_LA_ROCHE_POSAY_SUNSCREEN](https://amzn.to/example)
 
 ## Soft Girl Night Routine
 

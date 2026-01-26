@@ -204,6 +204,117 @@ This bag has gained traction on Pinterest among women seeking luxury handbags in
 
 The quiet luxury approach to styling timeless designer bags in 2026 emphasizes letting craftsmanship and design speak for themselves. Pair structured top handle bags with tailored blazers and crisp white shirts for office looks, or combine spacious totes with quality basics like cashmere sweaters and well-tailored outerwear for effortless sophistication. The key is allowing the bag to serve as the focal point of an otherwise understated ensemble—neutral tones work seamlessly with monochromatic looks, while textured leathers add subtle visual interest. These investment handbags become wardrobe constants that transition from formal meetings to weekend engagements, embodying the modern professional woman's commitment to enduring style over fleeting trends.`;
 
+// Build content for soft girl glow up article
+const softGirlGlowUpContent = `## Introduction
+
+The soft girl glow up isn't about perfect skin—it's about romanticizing your routine, slowing down, and choosing skincare that feels gentle, pretty, and comforting. In 2026, the trend has shifted away from harsh actives and complicated routines. Instead, everyone is copying a calm, aesthetic skincare ritual that focuses on hydration, glow, and consistency. If your goal is soft, healthy, luminous skin, this is the routine people are actually sticking to.
+
+## What Is the Soft Girl Glow Up?
+
+The soft girl glow up is all about dewy, hydrated skin achieved through gentle routines instead of aggressive treatments. It emphasizes aesthetic packaging that makes skincare enjoyable and glowing skin that looks healthy, not overdone. Think satin pajamas, warm lighting, glass skincare bottles, and slow mornings and cozy nights. Your skincare should feel like self-care, not a chore.
+
+## Start With a Gentle, Milky Cleanser
+
+![Gentle Milky Cleanser](https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&h=800&fit=crop)
+
+Soft girl skin always starts with a non-stripping cleanser. Harsh foaming cleansers ruin glow by damaging the skin barrier. In 2026, the trend is creamy, low-pH cleansers that leave skin soft and calm.
+
+**Look for:** Milky or lotion textures, ceramides, glycerin, and no strong fragrance.
+
+**Aesthetic-friendly picks:** La Roche-Posay Toleriane Hydrating Cleanser, Byoma Creamy Jelly Cleanser, or Glossier Milky Jelly Cleanser.
+
+**Tip:** Cleanse slowly. Massage for at least 30 seconds—this improves circulation and glow.
+
+[SHOP_GENTLE_CLEANSER](https://amzn.to/example)
+
+## Hydration Is the New Glow Secret
+
+![Hydrating Toner](https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=800&fit=crop)
+
+Soft girl glow is hydration-based, not exfoliation-based. Instead of using acids daily, people are layering hydrating toners and essences for plump, glassy skin.
+
+**Trending ingredients in 2026:** Hyaluronic acid, rice extract, panthenol, and beta-glucan.
+
+**Beautiful, glow-boosting options:** Laneige Cream Skin Toner, I'm From Rice Toner, or Round Lab Dokdo Toner.
+
+Apply with hands—never cotton pads—to keep the skin calm and juicy.
+
+[SHOP_HYDRATING_TONER](https://amzn.to/example)
+
+## Use a Glow Serum
+
+![Glow Serum](https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&h=800&fit=crop)
+
+Soft girl routines stay simple: one glow serum only. The goal is radiance, not irritation.
+
+**Best glow ingredients:** Niacinamide (low percentage), vitamin C derivatives, and peptides.
+
+**Popular glow serums people love in 2026:** Glow Recipe Niacinamide Dew Drops, The Ordinary Multi-Peptide + HA Serum, or Naturium Vitamin C Complex Serum.
+
+**Tip:** Apply serum while skin is slightly damp for maximum glow.
+
+[SHOP_GLOW_SERUM](https://amzn.to/example)
+
+## Seal Everything With a Dewy Moisturizer
+
+![Dewy Moisturizer](https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=600&h=800&fit=crop)
+
+This step is essential. Soft girl skin always looks bouncy, plush, and moisturized—never matte.
+
+**Look for moisturizers with:** Ceramides, squalane, shea butter, and barrier-repair ingredients.
+
+**Soft girl favorites:** Summer Fridays Jet Lag Mask (used as moisturizer), La Roche-Posay Cicaplast Baume B5, or Drunk Elephant Protini Cream.
+
+This step is what gives that "your skin but better" finish.
+
+[SHOP_DEWY_MOISTURIZER](https://amzn.to/example)
+
+## Lip Care Is Part of the Glow Up
+
+![Lip Care Products](https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&h=800&fit=crop)
+
+Soft girl glow includes soft, glossy lips—always. Lip care is non-negotiable in 2026 routines.
+
+**Must-have lip products:** Laneige Lip Sleeping Mask, Summer Fridays Lip Butter Balm, or Rhode Peptide Lip Treatment.
+
+Apply before bed and again in the morning for a naturally plump look.
+
+[SHOP_LIP_CARE](https://amzn.to/example)
+
+## Add One Aesthetic Beauty Tool
+
+![Beauty Tools](https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&h=800&fit=crop)
+
+You don't need many tools—just one. Popular soft girl tools include ice rollers, rose quartz gua sha, or facial massage wands.
+
+**Benefits:** Reduced puffiness, better circulation, and a relaxing ritual.
+
+Use for 5 minutes at night while listening to music or a podcast.
+
+[SHOP_BEAUTY_TOOLS](https://amzn.to/example)
+
+## Sunscreen Is the Ultimate Glow Protector
+
+![Glowy Sunscreen](https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&h=800&fit=crop)
+
+Nothing ruins glow faster than sun damage. Soft girl skin always looks youthful because SPF is applied daily, even indoors.
+
+**Lightweight, glowy SPFs:** Beauty of Joseon Relief Sun, Supergoop Glow Screen, or La Roche-Posay Anthelios Melt-In Milk.
+
+Apply generously—glow starts with protection.
+
+[SHOP_SUNSCREEN](https://amzn.to/example)
+
+## Soft Girl Night Routine
+
+The simple soft girl night routine consists of: gentle cleanse, hydrating toner, glow serum, moisturizer, and lip mask. That's it. Consistency over complexity.
+
+## Final Soft Girl Glow Up Tips
+
+Use warm lighting in your bathroom, keep skincare visible and organized, and choose products you enjoy touching and seeing. Slow down your routine—rushing kills the vibe. Drink water and prioritize sleep. Your glow up doesn't come from more products. It comes from treating your skin kindly—every single day.
+
+If you want aesthetic, healthy skin in 2026, keep your routine gentle, focus on hydration, choose pretty but effective skincare, protect your barrier, and romanticize the process. That's the soft girl secret everyone is copying.`;
+
 export const articlesData = [
   {
     id: 'perfume-article', // Fixed ID so it updates instead of creating duplicates
@@ -221,6 +332,15 @@ export const articlesData = [
     slug: "timeless-designer-bags-2026",
     content: designerBagsArticleContent,
     imageUrl: banner2, // Elegant designer bag hero image
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'soft-girl-glow-up-2026',
+    title: "Soft Girl Glow Up: Aesthetic Skincare Tips Everyone Is Copying in 2026",
+    category: "Beauty",
+    slug: "soft-girl-glow-up-skincare-2026",
+    content: softGirlGlowUpContent,
+    imageUrl: "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=1200&h=800&fit=crop",
     createdAt: new Date().toISOString(),
   },
 ];

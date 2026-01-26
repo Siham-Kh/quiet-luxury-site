@@ -24,6 +24,8 @@ import cleanserImage from '../assets/cleanser.png';
 import tonerImage from '../assets/toner.png';
 import serumsImage from '../assets/serums.png';
 import moisturizersImage from '../assets/moisturizers.png';
+import lipImage from '../assets/lip.png';
+import toolsImage from '../assets/tools.png';
 
 // Template for new articles:
 // {
@@ -327,29 +329,21 @@ This step is what gives that "your skin but better" finish.
 
 ## Lip Care Is Part of the Glow Up
 
-![Lip Care Products](https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&h=800&fit=crop)
+![Lip Care Products](${lipImage})
 
 Soft girl glow includes soft, glossy lips—always. Lip care is non-negotiable in 2026 routines.
 
-**Must-have lip products:**
+**Must-have lip product:**
 
-• Laneige Lip Sleeping Mask
-
-• Summer Fridays Lip Butter Balm
-
-• Rhode Peptide Lip Treatment
+• LANEIGE Lip Sleeping Mask: Nourish, Hydrate, Vitamin C, Murumuru & Shea Butter, Antioxidants, Flaky, Dry Lips
 
 Apply before bed and again in the morning for a naturally plump look.
 
-[SHOP_LANEIGE_LIP_MASK](https://amzn.to/example)
-
-[SHOP_SUMMER_FRIDAYS_LIP_BALM](https://amzn.to/example)
-
-[SHOP_RHODE_LIP_TREATMENT](https://amzn.to/example)
+[SHOP_LANEIGE_LIP_SLEEPING_MASK](https://amzn.to/49Tab2m)
 
 ## Add One Aesthetic Beauty Tool
 
-![Beauty Tools](https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&h=800&fit=crop)
+![Beauty Tools](${toolsImage})
 
 You don't need many tools—just one. Popular soft girl tools include ice rollers, rose quartz gua sha, or facial massage wands.
 

@@ -22,6 +22,8 @@ import bag5 from '../assets/bag 5.png';
 import banner2 from '../assets/banner 2.png';
 import cleanserImage from '../assets/cleanser.png';
 import tonerImage from '../assets/toner.png';
+import serumsImage from '../assets/serums.png';
+import moisturizersImage from '../assets/moisturizers.png';
 
 // Template for new articles:
 // {
@@ -269,7 +271,7 @@ Apply with hands—never cotton pads—to keep the skin calm and juicy.
 
 ## Use a Glow Serum
 
-![Glow Serum](https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&h=800&fit=crop)
+![Glow Serum](${serumsImage})
 
 Soft girl routines stay simple: one glow serum only. The goal is radiance, not irritation.
 
@@ -277,23 +279,27 @@ Soft girl routines stay simple: one glow serum only. The goal is radiance, not i
 
 **Popular glow serums people love in 2026:**
 
-• Glow Recipe Niacinamide Dew Drops
+• Torriden DIVE IN Hyaluronic Acid Serum
 
-• The Ordinary Multi-Peptide + HA Serum
+• GOODAL Green Tangerine Vitamin C Serum
 
-• Naturium Vitamin C Complex Serum
+• numbuzin No.9 NAD+ BIO Lifting Serum
+
+• SKIN1004 Madagascar Centella Asiatica Ampoule Facial Serum
 
 **Tip:** Apply serum while skin is slightly damp for maximum glow.
 
-[SHOP_GLOW_RECIPE_SERUM](https://amzn.to/example)
+[SHOP_TORRIDEN_HYALURONIC_SERUM](https://amzn.to/4ryjvA7)
 
-[SHOP_THE_ORDINARY_SERUM](https://amzn.to/example)
+[SHOP_GOODAL_VITAMIN_C_SERUM](https://amzn.to/45vrZPT)
 
-[SHOP_NATURIUM_SERUM](https://amzn.to/example)
+[SHOP_NUMBUZIN_NAD_SERUM](https://amzn.to/4rf6hId)
+
+[SHOP_SKIN1004_CENTELLA_SERUM](https://amzn.to/46b510s)
 
 ## Seal Everything With a Dewy Moisturizer
 
-![Dewy Moisturizer](https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=600&h=800&fit=crop)
+![Dewy Moisturizer](${moisturizersImage})
 
 This step is essential. Soft girl skin always looks bouncy, plush, and moisturized—never matte.
 
@@ -301,19 +307,23 @@ This step is essential. Soft girl skin always looks bouncy, plush, and moisturiz
 
 **Soft girl favorites:**
 
-• Summer Fridays Jet Lag Mask (used as moisturizer)
+• Dr.Althea 345 Relief Cream
 
-• La Roche-Posay Cicaplast Baume B5
+• Dr.Althea 147 Barrier Cream
 
-• Drunk Elephant Protini Cream
+• AESTURA ATOBARRIER365 Cream
+
+• Illiyoon Ceramide Ato Concentrate Cream
 
 This step is what gives that "your skin but better" finish.
 
-[SHOP_SUMMER_FRIDAYS_MOISTURIZER](https://amzn.to/example)
+[SHOP_DR_ALTHEA_345_RELIEF_CREAM](https://amzn.to/3YYXmyt)
 
-[SHOP_LA_ROCHE_POSAY_MOISTURIZER](https://amzn.to/example)
+[SHOP_DR_ALTHEA_147_BARRIER_CREAM](https://amzn.to/4pWNPmw)
 
-[SHOP_DRUNK_ELEPHANT_MOISTURIZER](https://amzn.to/example)
+[SHOP_AESTURA_ATOBARRIER365_CREAM](https://amzn.to/463aPcp)
+
+[SHOP_ILLIYOON_CERAMIDE_CREAM](https://amzn.to/4k9qtJ9)
 
 ## Lip Care Is Part of the Glow Up
 

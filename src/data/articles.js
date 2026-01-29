@@ -419,7 +419,7 @@ From soft neutral bath mats to elegant storage details, these small changes inst
 
 ## 1. Luxury Bath Mats That Set the Entire Mood
 
-![Luxury Bath Mats](${matsImage})
+![Neutral beige bath mat in a hotel style bathroom with soft luxury decor](${matsImage})
 
 A bathroom's aesthetic starts from the floor.
 
@@ -439,7 +439,7 @@ These styles photograph beautifully and give that "quiet luxury" look Pinterest 
 
 ## 2. Over-the-Toilet Storage That Looks Styled, Not Cluttered
 
-![Over-the-Toilet Storage](${shelvesImage})
+![Over the toilet bathroom shelves styled with woven baskets and plants](${shelvesImage})
 
 One of the most saved bathroom decor ideas on Pinterest right now is styled toilet shelving.
 
@@ -459,7 +459,7 @@ This single upgrade makes small bathrooms look intentionally designed.
 
 ## 3. Spa-Style Bathroom Accessories That Feel Expensive
 
-![Spa-Style Bathroom Accessories](${accessoriesImage})
+![Spa style bathroom accessories with ceramic soap dispensers and tray](${accessoriesImage})
 
 Luxury hotels don't use plastic bottles — and neither should you.
 
@@ -479,7 +479,7 @@ When everything matches, the bathroom automatically feels high-end.
 
 ## 4. Soft Decor Touches That Create Calm
 
-![Soft Decor Touches](${accessories2Image})
+![Quiet luxury bathroom decor with candles eucalyptus and neutral tones](${accessories2Image})
 
 What separates a basic bathroom from a hotel-inspired one is atmosphere.
 
@@ -501,7 +501,7 @@ These pieces make the bathroom feel warm, relaxing, and intentional — even wit
 
 ## 5. Towel Styling That Makes Everything Look Polished
 
-![Towel Styling](${towelsImage})
+![Rolled white towels styled on bathroom shelf for hotel inspired look](${towelsImage})
 
 Rolled or folded towels are one of the easiest ways to get that luxury look.
 

@@ -435,7 +435,10 @@ Look for:
 
 These styles photograph beautifully and give that "quiet luxury" look Pinterest users love.
 
-[SHOP_LUXURY_BATH_MATS](https://amzn.to/placeholder)
+[SHOP_LUXURY_BATH_MAT_1](https://amzn.to/placeholder)
+[SHOP_LUXURY_BATH_MAT_2](https://amzn.to/placeholder)
+[SHOP_LUXURY_BATH_MAT_3](https://amzn.to/placeholder)
+[SHOP_LUXURY_BATH_MAT_4](https://amzn.to/placeholder)
 
 ## 2. Over-the-Toilet Storage That Looks Styled, Not Cluttered
 
@@ -455,7 +458,9 @@ The key is styling:
 
 This single upgrade makes small bathrooms look intentionally designed.
 
-[SHOP_AESTHETIC_BATHROOM_SHELVING](https://amzn.to/placeholder)
+[SHOP_BATHROOM_SHELVING_1](https://amzn.to/placeholder)
+[SHOP_BATHROOM_SHELVING_2](https://amzn.to/placeholder)
+[SHOP_BATHROOM_SHELVING_3](https://amzn.to/placeholder)
 
 ## 3. Spa-Style Bathroom Accessories That Feel Expensive
 
@@ -475,7 +480,10 @@ Popular Pinterest favorites include:
 
 When everything matches, the bathroom automatically feels high-end.
 
-[SHOP_SPA_STYLE_BATHROOM_ACCESSORIES](https://amzn.to/placeholder)
+[SHOP_BATHROOM_ACCESSORIES_1](https://amzn.to/placeholder)
+[SHOP_BATHROOM_ACCESSORIES_2](https://amzn.to/placeholder)
+[SHOP_BATHROOM_ACCESSORIES_3](https://amzn.to/placeholder)
+[SHOP_BATHROOM_ACCESSORIES_4](https://amzn.to/placeholder)
 
 ## 4. Soft Decor Touches That Create Calm
 
@@ -497,7 +505,9 @@ This is one of the fastest ways to make a small bathroom feel intentional.
 
 These pieces make the bathroom feel warm, relaxing, and intentional — even without changing fixtures.
 
-[SHOP_SOFT_LUXURY_BATHROOM_DECOR](https://amzn.to/placeholder)
+[SHOP_SOFT_BATHROOM_DECOR_1](https://amzn.to/placeholder)
+[SHOP_SOFT_BATHROOM_DECOR_2](https://amzn.to/placeholder)
+[SHOP_SOFT_BATHROOM_DECOR_3](https://amzn.to/placeholder)
 
 ## 5. Towel Styling That Makes Everything Look Polished
 
@@ -515,7 +525,10 @@ Choose:
 
 This instantly gives "five-star hotel bathroom" energy — especially when paired with baskets or shelving.
 
-[SHOP_ELEGANT_TOWEL_STORAGE](https://amzn.to/placeholder)
+[SHOP_LUXURY_TOWELS_1](https://amzn.to/placeholder)
+[SHOP_LUXURY_TOWELS_2](https://amzn.to/placeholder)
+[SHOP_LUXURY_TOWELS_3](https://amzn.to/placeholder)
+[SHOP_LUXURY_TOWELS_4](https://amzn.to/placeholder)
 
 ## Final Thoughts
 

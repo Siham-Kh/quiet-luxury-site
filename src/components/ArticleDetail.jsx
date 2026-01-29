@@ -335,6 +335,13 @@ const ArticleDetail = ({ article, onBack }) => {
                 return processedLines;
               })()}
             </div>
+            
+            {/* Affiliate Disclaimer */}
+            <div className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-luxury-beige">
+              <p className="text-xs sm:text-sm text-luxury-taupe leading-relaxed opacity-75 text-center max-w-2xl mx-auto">
+                This article contains affiliate links. If you make a purchase, I may earn a small commission at no extra cost to you.
+              </p>
+            </div>
           </div>
 
         </div>

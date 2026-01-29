@@ -63,6 +63,48 @@ const ArticleDetail = ({ article, onBack }) => {
                 let closingSectionTitle = null;
                 let isFirstSection = true;
                 
+                // Product card tracking
+                let currentProduct = null;
+                let productCards = [];
+                let sectionProductCards = null; // Store product cards separately for full-width rendering
+                
+                // Helper function to render product cards
+                const renderProductCards = (cards) => {
+                  if (cards.length === 0) return null;
+                  return (
+                    <div key={`product-cards-${cards[0].key}`} className="w-full my-12 sm:my-16 col-span-full">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+                        {cards.map((product) => (
+                          <div key={product.key} className="group bg-white rounded-2xl border border-luxury-beige overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col h-full hover:-translate-y-1">
+                            {/* Product Image - Square, centered */}
+                            <div className="w-full aspect-square bg-gradient-to-br from-luxury-beige/30 to-luxury-cream/50 flex items-center justify-center overflow-hidden relative">
+                              <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
+                                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-xs">
+                                  <span className="text-center text-[10px] px-2">Image</span>
+                                </div>
+                              </div>
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            </div>
+                            
+                            {/* Product Content */}
+                            <div className="p-6 sm:p-7 flex flex-col flex-grow">
+                              <h3 className="text-lg sm:text-xl font-semibold text-luxury-charcoal mb-3 leading-snug tracking-tight">
+                                {product.title}
+                              </h3>
+                              <p className="text-gray-600 text-sm sm:text-[15px] leading-relaxed mb-6 font-light flex-grow text-gray-700">
+                                {product.description}
+                              </p>
+                              <div className="mt-auto pt-2">
+                                {product.button}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                };
+                
                 for (let i = 0; i < lines.length; i++) {
                   const line = lines[i];
                   
@@ -71,54 +113,81 @@ const ArticleDetail = ({ article, onBack }) => {
                     const sectionTitle = line.substring(3);
                     isClosingSection = sectionTitle.includes('Art of Choosing') || sectionTitle.includes('Conclusion') || sectionTitle.includes('Final Thoughts');
                     
+                    // Finalize any remaining product
+                    if (currentProduct && currentProduct.description) {
+                      productCards.push(currentProduct);
+                      currentProduct = null;
+                    }
+                    
+                    // Store product cards separately if we have any
+                    if (productCards.length > 0) {
+                      sectionProductCards = renderProductCards(productCards);
+                      productCards = [];
+                    }
+                    
                     // If we have a previous section with content, render it
-                    if (inSection && currentSectionContent.length > 0) {
+                    if (inSection && (currentSectionContent.length > 0 || sectionProductCards)) {
                       if (currentSectionImage) {
-                        // Section with image - use image+content layout
+                        // Section with image - use image+content layout, then product cards full-width below
                         processedLines.push(
-                          <div key={`section-${i}`} className="my-12 sm:my-16 lg:my-20 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
-                            <div className="lg:col-span-6 order-2 lg:order-1">
-                              <div className="lg:sticky lg:top-8">
-                                <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
-                                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-                                  <img 
-                                    src={currentSectionImage.src} 
-                                    alt={currentSectionImage.alt} 
-                                    className="w-full aspect-[9/16] object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                    onError={(e) => {
-                                      e.target.style.display = 'none';
-                                    }}
-                                  />
+                          <div key={`section-${i}`} className="my-12 sm:my-16 lg:my-20">
+                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 mb-8">
+                              <div className="lg:col-span-6 order-2 lg:order-1">
+                                <div className="lg:sticky lg:top-8">
+                                  <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                                    <img 
+                                      src={currentSectionImage.src} 
+                                      alt={currentSectionImage.alt} 
+                                      className="w-full aspect-[9/16] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                      onError={(e) => {
+                                        e.target.style.display = 'none';
+                                      }}
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="lg:col-span-6 order-1 lg:order-2 min-w-0">
+                                <div className="space-y-4 sm:space-y-6 w-full overflow-hidden">
+                                  {currentSectionContent}
+                                  {currentSectionButtons.length > 0 && (
+                                    <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                                      {currentSectionButtons}
+                                    </div>
+                                  )}
                                 </div>
                               </div>
                             </div>
-                            <div className="lg:col-span-6 order-1 lg:order-2">
-                              <div className="space-y-4 sm:space-y-6">
-                                {currentSectionContent}
-                                {currentSectionButtons.length > 0 && (
-                                  <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-                                    {currentSectionButtons}
-                                  </div>
-                                )}
+                            {/* Product cards rendered full-width below */}
+                            {sectionProductCards && (
+                              <div className="w-full">
+                                {sectionProductCards}
                               </div>
-                            </div>
+                            )}
                           </div>
                         );
                       } else {
-                        // Section without image - render as full-width content
+                        // Section without image - render as full-width
                         processedLines.push(
-                          <div key={`section-no-image-${i}`} className="my-12">
-                        <div className="space-y-6">
-                          {currentSectionContent}
-                          {currentSectionButtons.length > 0 && (
-                            <div className="mt-8 pt-6 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-                              {currentSectionButtons}
+                          <div key={`section-${i}`} className="my-12 sm:my-16 lg:my-20">
+                            <div className="space-y-4 sm:space-y-6">
+                              {currentSectionContent}
+                              {currentSectionButtons.length > 0 && (
+                                <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                                  {currentSectionButtons}
+                                </div>
+                              )}
                             </div>
-                          )}
-                        </div>
+                            {/* Product cards rendered full-width below */}
+                            {sectionProductCards && (
+                              <div className="w-full mt-8">
+                                {sectionProductCards}
+                              </div>
+                            )}
                           </div>
                         );
                       }
+                      sectionProductCards = null; // Reset for next section
                     }
                     
                     // If we have a previous closing section with content, render it
@@ -195,18 +264,41 @@ const ArticleDetail = ({ article, onBack }) => {
                   if (affiliateMatch) {
                     const [, productName, url] = affiliateMatch;
                     const displayName = productName.replace(/_/g, ' ');
-                    currentSectionButtons.push(
+                    const button = (
                       <a
                         key={`button-${i}`}
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-gradient-to-r from-luxury-charcoal via-gray-800 to-luxury-charcoal text-white rounded-full hover:shadow-2xl transition-all duration-300 font-medium tracking-wider shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm sm:text-base"
+                        className="group w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-luxury-charcoal text-white rounded-xl hover:bg-gray-800 transition-all duration-300 font-medium tracking-wide shadow-sm hover:shadow-lg transform hover:-translate-y-0.5 text-sm"
                       >
-                        <span>Shop {displayName}</span>
-                        <span className="transform group-hover:translate-x-2 transition-transform duration-300 text-base sm:text-lg">→</span>
+                        <span>Shop Now</span>
+                        <span className="transform group-hover:translate-x-1 transition-transform duration-300 text-base">→</span>
                       </a>
                     );
+                    
+                    // If we have a current product, add button to it
+                    if (currentProduct) {
+                      currentProduct.button = button;
+                      productCards.push(currentProduct);
+                      currentProduct = null;
+                      continue;
+                    }
+                    
+                    // Otherwise render button inline (for non-product buttons)
+                    if (isClosingSection) {
+                      closingSectionContent.push(
+                        <div key={`button-wrapper-${i}`} className="my-4">
+                          {button}
+                        </div>
+                      );
+                    } else {
+                      currentSectionContent.push(
+                        <div key={`button-wrapper-${i}`} className="my-4">
+                          {button}
+                        </div>
+                      );
+                    }
                     continue;
                   }
                   
@@ -226,8 +318,46 @@ const ArticleDetail = ({ article, onBack }) => {
                       );
                     }
                   } else if (line.trim() === '') {
-                    // Skip empty lines for cleaner spacing
+                    // If we have a product in progress and hit empty line, finalize it
+                    if (currentProduct && currentProduct.description) {
+                      productCards.push(currentProduct);
+                      currentProduct = null;
+                    }
                   } else if (line.trim() !== '') {
+                    // Check if this is a product title (emoji + bold text)
+                    const productTitleMatch = line.match(/^([🏆💎🌿🕯️🪨])\s+\*\*([^*]+)\*\*/);
+                    if (productTitleMatch) {
+                      // Finalize previous product if exists
+                      if (currentProduct) {
+                        if (currentProduct.description || currentProduct.button) {
+                          productCards.push(currentProduct);
+                        }
+                      }
+                      // Start new product
+                      const [, emoji, title] = productTitleMatch;
+                      currentProduct = {
+                        key: `product-${i}`,
+                        emoji,
+                        title: `${emoji} ${title}`,
+                        description: '',
+                        button: null
+                      };
+                      continue;
+                    }
+                    
+                    // If we have a current product and this isn't a button or empty, it's the description
+                    if (currentProduct && !line.match(/\[SHOP_/) && line.trim() !== '') {
+                      // Only set description if it's not already set (to handle multi-line descriptions)
+                      if (!currentProduct.description) {
+                        currentProduct.description = line.trim();
+                      } else {
+                        // Append to description for multi-line
+                        currentProduct.description += ' ' + line.trim();
+                      }
+                      continue;
+                    }
+                    
+                    // Regular text content
                     const processedLine = line
                       .replace(/\*\*([^*]+)\*\*/g, '<strong class="font-semibold text-luxury-charcoal">$1</strong>');
                     
@@ -253,43 +383,63 @@ const ArticleDetail = ({ article, onBack }) => {
                   }
                 }
                 
+                // Finalize any remaining product
+                if (currentProduct && currentProduct.description) {
+                  productCards.push(currentProduct);
+                  currentProduct = null;
+                }
+                
+                // Store product cards separately if we have any
+                if (productCards.length > 0) {
+                  sectionProductCards = renderProductCards(productCards);
+                  productCards = [];
+                }
+                
                 // Render last section if it exists (only if it's not a closing section)
-                if (inSection && !isClosingSection && currentSectionContent.length > 0) {
+                if (inSection && !isClosingSection && (currentSectionContent.length > 0 || sectionProductCards)) {
                   if (currentSectionImage) {
-                    // Section with image - use image+content layout
+                    // Section with image - use image+content layout, then product cards full-width below
                     processedLines.push(
-                      <div key="section-final" className="my-12 sm:my-16 lg:my-20 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
-                        <div className="lg:col-span-6 order-2 lg:order-1">
-                          <div className="lg:sticky lg:top-8">
-                            <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-                              <img 
-                                src={currentSectionImage.src} 
-                                alt={currentSectionImage.alt} 
-                                className="w-full aspect-[9/16] object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                onError={(e) => {
-                                  e.target.style.display = 'none';
-                                }}
-                              />
+                      <div key="section-final" className="my-12 sm:my-16 lg:my-20">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 mb-8">
+                          <div className="lg:col-span-6 order-2 lg:order-1">
+                            <div className="lg:sticky lg:top-8">
+                              <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                                <img 
+                                  src={currentSectionImage.src} 
+                                  alt={currentSectionImage.alt} 
+                                  className="w-full aspect-[9/16] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                  onError={(e) => {
+                                    e.target.style.display = 'none';
+                                  }}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="lg:col-span-6 order-1 lg:order-2">
+                            <div className="space-y-4 sm:space-y-6">
+                              {currentSectionContent}
+                              {currentSectionButtons.length > 0 && (
+                                <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                                  {currentSectionButtons}
+                                </div>
+                              )}
                             </div>
                           </div>
                         </div>
-                        <div className="lg:col-span-6 order-1 lg:order-2">
-                          <div className="space-y-4 sm:space-y-6">
-                            {currentSectionContent}
-                            {currentSectionButtons.length > 0 && (
-                              <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-                                {currentSectionButtons}
-                              </div>
-                            )}
+                        {/* Product cards rendered full-width below */}
+                        {sectionProductCards && (
+                          <div className="w-full">
+                            {sectionProductCards}
                           </div>
-                        </div>
+                        )}
                       </div>
                     );
                   } else {
-                    // Section without image - render as full-width content
+                    // Section without image - render as full-width
                     processedLines.push(
-                      <div key="section-final-no-image" className="my-12">
+                      <div key="section-final" className="my-12 sm:my-16 lg:my-20">
                         <div className="space-y-4 sm:space-y-6">
                           {currentSectionContent}
                           {currentSectionButtons.length > 0 && (
@@ -298,6 +448,12 @@ const ArticleDetail = ({ article, onBack }) => {
                             </div>
                           )}
                         </div>
+                        {/* Product cards rendered full-width below */}
+                        {sectionProductCards && (
+                          <div className="w-full mt-8">
+                            {sectionProductCards}
+                          </div>
+                        )}
                       </div>
                     );
                   }

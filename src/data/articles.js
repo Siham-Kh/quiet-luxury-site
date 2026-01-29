@@ -435,10 +435,35 @@ Look for:
 
 These styles photograph beautifully and give that "quiet luxury" look Pinterest users love.
 
-[SHOP_LUXURY_BATH_MAT_1](https://amzn.to/placeholder)
-[SHOP_LUXURY_BATH_MAT_2](https://amzn.to/placeholder)
-[SHOP_LUXURY_BATH_MAT_3](https://amzn.to/placeholder)
-[SHOP_LUXURY_BATH_MAT_4](https://amzn.to/placeholder)
+🏆 **Best Overall — Hotel-Style Cotton Bath Mat**
+
+Soft, towel-like cotton that gives your bathroom that clean, luxury hotel feel the moment you step out of the shower.
+
+[SHOP_BEST_OVERALL_HOTEL_TOWEL_STYLE](https://amzn.to/45DkR3R)
+
+💎 **Best Budget Option**
+
+A simple, high-quality cotton mat that delivers the hotel look at a more affordable price — perfect for everyday use.
+
+[SHOP_BEST_BUDGET_OPTION](https://amzn.to/3Z98GIr)
+
+🌿 **Best Spa-Inspired (Waffle)**
+
+The textured waffle design adds instant spa energy and looks beautiful in neutral, quiet-luxury bathrooms.
+
+[SHOP_BEST_SPA_INSPIRED_WAFFLE](https://amzn.to/4qOWtF3)
+
+🕯️ **Boutique Hotel Pick**
+
+Minimal, elegant, and plush — this is the kind of bath mat you'd expect in a boutique hotel or luxury Airbnb.
+
+[SHOP_BOUTIQUE_HOTEL_PICK](https://amzn.to/4kq06yZ)
+
+🪨 **Modern Spa Upgrade (Stone)**
+
+A sleek alternative to fabric mats, this quick-dry stone option gives your bathroom a modern, high-end spa look.
+
+[SHOP_MODERN_SPA_UPGRADE_STONE](https://amzn.to/3LR0kSN)
 
 ## 2. Over-the-Toilet Storage That Looks Styled, Not Cluttered
 

@@ -483,9 +483,29 @@ The key is styling:
 
 This single upgrade makes small bathrooms look intentionally designed.
 
-[SHOP_BATHROOM_SHELVING_1](https://amzn.to/placeholder)
-[SHOP_BATHROOM_SHELVING_2](https://amzn.to/placeholder)
-[SHOP_BATHROOM_SHELVING_3](https://amzn.to/placeholder)
+🏆 **Best Overall (Most Saved Style)**
+
+A warm bamboo shelf that instantly elevates your bathroom. This is one of the most saved styles on Pinterest for creating a clean, hotel-inspired look.
+
+[SHOP_BEST_OVERALL_MOST_SAVED_STYLE](https://amzn.to/4k90CRx)
+
+🧺 **Best for Small Bathrooms**
+
+Designed to maximize vertical space without overwhelming the room. Perfect for apartments, rentals, and compact bathrooms.
+
+[SHOP_BEST_FOR_SMALL_BATHROOMS](https://amzn.to/4q1PPtF)
+
+✨ **Best Minimal / Spa-Inspired Look**
+
+Clean lines and natural bamboo create a light, airy feel — ideal for calm, spa-like bathrooms.
+
+[SHOP_BEST_MINIMAL_SPA_INSPIRED_LOOK](https://amzn.to/4toJPyn)
+
+🧺 **Boutique Hotel Pick (Hidden Storage)**
+
+Features baskets and concealed storage to keep everyday items out of sight while maintaining a polished look.
+
+[SHOP_BOUTIQUE_HOTEL_PICK_HIDDEN_STORAGE](https://amzn.to/4k3HnsA)
 
 ## 3. Spa-Style Bathroom Accessories That Feel Expensive
 

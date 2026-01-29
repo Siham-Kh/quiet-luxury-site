@@ -493,6 +493,8 @@ Pinterest users love soft details like:
 
 • subtle candles
 
+This is one of the fastest ways to make a small bathroom feel intentional.
+
 These pieces make the bathroom feel warm, relaxing, and intentional — even without changing fixtures.
 
 [SHOP_SOFT_LUXURY_BATHROOM_DECOR](https://amzn.to/placeholder)

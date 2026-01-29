@@ -44,12 +44,12 @@ const ArticleDetail = ({ article, onBack }) => {
             </time>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-luxury-charcoal mb-6 sm:mb-8 leading-tight tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-luxury-charcoal mb-10 sm:mb-12 md:mb-16 leading-[1.1] tracking-[-0.02em] font-normal">
             {article.title}
           </h1>
 
           <div className="prose prose-lg max-w-none">
-            <div className="text-luxury-charcoal leading-relaxed text-lg">
+            <div className="text-luxury-charcoal leading-[1.75] text-[17px] sm:text-[18px] font-light">
               {(() => {
                 const lines = article.content.split('\n');
                 const processedLines = [];
@@ -58,6 +58,10 @@ const ArticleDetail = ({ article, onBack }) => {
                 let currentSectionButtons = [];
                 let inSection = false;
                 let isClosingSection = false;
+                let closingSectionImage = null;
+                let closingSectionContent = [];
+                let closingSectionTitle = null;
+                let isFirstSection = true;
                 
                 for (let i = 0; i < lines.length; i++) {
                   const line = lines[i];
@@ -65,7 +69,7 @@ const ArticleDetail = ({ article, onBack }) => {
                   // Check for section header
                   if (line.startsWith('## ')) {
                     const sectionTitle = line.substring(3);
-                    isClosingSection = sectionTitle.includes('Art of Choosing') || sectionTitle.includes('Conclusion');
+                    isClosingSection = sectionTitle.includes('Art of Choosing') || sectionTitle.includes('Conclusion') || sectionTitle.includes('Final Thoughts');
                     
                     // If we have a previous section with content, render it
                     if (inSection && currentSectionContent.length > 0) {
@@ -117,24 +121,53 @@ const ArticleDetail = ({ article, onBack }) => {
                       }
                     }
                     
-                    // Start new section
-                    isClosingSection = sectionTitle.includes('Art of Choosing') || sectionTitle.includes('Conclusion');
-                    
-                    if (isClosingSection) {
-                      // Closing section - full width, no image layout, with prominent separator line
+                    // If we have a previous closing section with content, render it
+                    if (isClosingSection && closingSectionContent.length > 0 && closingSectionTitle) {
                       processedLines.push(
-                        <div key={`closing-${i}`} className="my-12 sm:my-16 lg:my-20 pt-8 sm:pt-10 lg:pt-12 border-t-2 border-luxury-charcoal border-opacity-20">
-                          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-luxury-charcoal mb-6 sm:mb-8 mt-6 sm:mt-8">
-                            {sectionTitle}
+                        <div key={`closing-section-${i}`} className="my-12 sm:my-16 lg:my-20 pt-8 sm:pt-10 lg:pt-12 border-t-2 border-luxury-charcoal border-opacity-20">
+                          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-luxury-charcoal mb-6 sm:mb-8 mt-6 sm:mt-8 leading-[1.2] tracking-[-0.01em] font-normal">
+                            {closingSectionTitle}
                           </h2>
+                          <div className="space-y-4 sm:space-y-6">
+                            {closingSectionContent}
+                            {closingSectionImage && (
+                              <div key="closing-image" className="my-8 sm:my-10 lg:my-12">
+                                <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                                  <img 
+                                    src={closingSectionImage.src} 
+                                    alt={closingSectionImage.alt} 
+                                    className="w-full aspect-[16/9] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                    onError={(e) => {
+                                      e.target.style.display = 'none';
+                                    }}
+                                  />
+                                </div>
+                              </div>
+                            )}
+                          </div>
                         </div>
                       );
+                      closingSectionContent = [];
+                      closingSectionImage = null;
+                      closingSectionTitle = null;
+                    }
+                    
+                    // Start new section
+                    isClosingSection = sectionTitle.includes('Art of Choosing') || sectionTitle.includes('Conclusion') || sectionTitle.includes('Final Thoughts');
+                    
+                    if (isClosingSection) {
+                      // Closing section - store title and content separately
+                      closingSectionTitle = sectionTitle;
+                      closingSectionContent = [];
+                      closingSectionImage = null;
                     } else {
                       processedLines.push(
-                        <h2 key={i} className="text-3xl lg:text-4xl font-serif text-luxury-charcoal mt-20 mb-0 pt-12 border-t-2 border-luxury-beige first:mt-0 first:pt-0 first:border-t-0">
+                        <h2 key={i} className={`text-2xl sm:text-3xl lg:text-4xl font-serif text-luxury-charcoal mb-0 pt-12 border-t-2 border-luxury-beige leading-[1.2] tracking-[-0.01em] font-normal ${isFirstSection ? 'mt-8 sm:mt-10 md:mt-12' : 'mt-20'}`}>
                           {sectionTitle}
                         </h2>
                       );
+                      isFirstSection = false;
                     }
                     
                     currentSectionContent = [];
@@ -146,9 +179,14 @@ const ArticleDetail = ({ article, onBack }) => {
                   
                   // Check for image
                   const imageMatch = line.match(/!\[([^\]]*)\]\(([^)]+)\)/);
-                  if (imageMatch && inSection) {
+                  if (imageMatch) {
                     const [, alt, src] = imageMatch;
-                    currentSectionImage = { alt, src };
+                    if (isClosingSection) {
+                      // Store image to render after text content
+                      closingSectionImage = { alt, src };
+                    } else if (inSection) {
+                      currentSectionImage = { alt, src };
+                    }
                     continue;
                   }
                   
@@ -175,14 +213,14 @@ const ArticleDetail = ({ article, onBack }) => {
                   // Process text content
                   if (line.startsWith('### ')) {
                     if (isClosingSection) {
-                      processedLines.push(
-                        <h3 key={i} className="text-xl font-semibold text-luxury-charcoal mt-8 mb-3">
+                      closingSectionContent.push(
+                        <h3 key={i} className="text-lg sm:text-xl font-medium text-luxury-charcoal mt-8 mb-3 leading-[1.4]">
                           {line.substring(4)}
                         </h3>
                       );
                     } else {
                       currentSectionContent.push(
-                        <h3 key={i} className="text-xl font-semibold text-luxury-charcoal mt-8 mb-3">
+                        <h3 key={i} className="text-lg sm:text-xl font-medium text-luxury-charcoal mt-8 mb-3 leading-[1.4]">
                           {line.substring(4)}
                         </h3>
                       );
@@ -194,11 +232,11 @@ const ArticleDetail = ({ article, onBack }) => {
                       .replace(/\*\*([^*]+)\*\*/g, '<strong class="font-semibold text-luxury-charcoal">$1</strong>');
                     
                     if (isClosingSection) {
-                      // Render directly in processedLines for closing section (full width)
-                      processedLines.push(
+                      // Add to closing section content (will render after with image)
+                      closingSectionContent.push(
                         <p 
                           key={i} 
-                          className="text-gray-700 leading-7 text-base mb-6"
+                          className="text-gray-700 leading-[1.75] text-[17px] sm:text-[18px] mb-6 font-light"
                           dangerouslySetInnerHTML={{ __html: processedLine }}
                         />
                       );
@@ -207,7 +245,7 @@ const ArticleDetail = ({ article, onBack }) => {
                       currentSectionContent.push(
                         <p 
                           key={i} 
-                          className="text-gray-700 leading-7 text-base"
+                          className="text-gray-700 leading-[1.75] text-[17px] sm:text-[18px] font-light"
                           dangerouslySetInnerHTML={{ __html: processedLine }}
                         />
                       );
@@ -263,9 +301,35 @@ const ArticleDetail = ({ article, onBack }) => {
                       </div>
                     );
                   }
-                } else if (inSection && isClosingSection && currentSectionContent.length > 0) {
-                  // Handle closing section content that wasn't rendered yet
-                  // This shouldn't happen since closing section content is rendered directly
+                } else if (inSection && isClosingSection && (closingSectionContent.length > 0 || closingSectionImage)) {
+                  // Render final closing section with image after text
+                  processedLines.push(
+                    <div key="closing-section-final" className="my-12 sm:my-16 lg:my-20 pt-8 sm:pt-10 lg:pt-12 border-t-2 border-luxury-charcoal border-opacity-20">
+                      {closingSectionTitle && (
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-luxury-charcoal mb-6 sm:mb-8 mt-6 sm:mt-8 leading-[1.2] tracking-[-0.01em] font-normal">
+                          {closingSectionTitle}
+                        </h2>
+                      )}
+                      <div className="space-y-4 sm:space-y-6">
+                        {closingSectionContent}
+                        {closingSectionImage && (
+                          <div key="closing-image-final" className="my-8 sm:my-10 lg:my-12">
+                            <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                              <img 
+                                src={closingSectionImage.src} 
+                                alt={closingSectionImage.alt} 
+                                className="w-full aspect-[16/9] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                onError={(e) => {
+                                  e.target.style.display = 'none';
+                                }}
+                              />
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
                 }
                 
                 return processedLines;

@@ -21,6 +21,7 @@ import bag4 from '../assets/bag 4.png';
 import bag5 from '../assets/bag 5.png';
 import banner2 from '../assets/banner 2.png';
 import banner3 from '../assets/banner 3.png';
+import banner4 from '../assets/banner 4b.png';
 import cleanserImage from '../assets/cleanser.png';
 import tonerImage from '../assets/toner.png';
 import serumsImage from '../assets/serums.png';
@@ -28,6 +29,12 @@ import moisturizersImage from '../assets/moisturizers.png';
 import lipImage from '../assets/lip.png';
 import toolsImage from '../assets/tools.png';
 import sunscreenImage from '../assets/sunscreen.png';
+import matsImage from '../assets/mats.png';
+import shelvesImage from '../assets/shelves.png';
+import accessoriesImage from '../assets/accessories.png';
+import accessories2Image from '../assets/accessories2.png';
+import towelsImage from '../assets/towels.png';
+import finalImage from '../assets/final.png';
 
 // Template for new articles:
 // {
@@ -399,6 +406,125 @@ Use warm lighting in your bathroom, keep skincare visible and organized, and cho
 
 If you want aesthetic, healthy skin in 2026, keep your routine gentle, focus on hydration, choose pretty but effective skincare, protect your barrier, and romanticize the process. That's the soft girl secret everyone is copying.`;
 
+// Build content for hotel-style bathroom upgrades article
+const hotelBathroomUpgradesContent = `## Introduction
+
+Want your bathroom to feel calm, clean, and effortlessly luxurious — without a full renovation?
+
+Pinterest users are obsessively saving these hotel-style bathroom upgrades right now.
+
+From soft neutral bath mats to elegant storage details, these small changes instantly transform even the tiniest bathroom into a spa-like space.
+
+✨ Think: boutique hotel energy, but at home.
+
+## 1. Luxury Bath Mats That Set the Entire Mood
+
+![Luxury Bath Mats](${matsImage})
+
+A bathroom's aesthetic starts from the floor.
+
+Hotel-style bathrooms almost always use thick, neutral bath mats that feel plush under your feet and instantly make the space look cleaner and more elevated.
+
+Look for:
+
+• soft cotton or waffle textures
+
+• beige, ivory, or warm white tones
+
+• simple rectangular shapes
+
+These styles photograph beautifully and give that "quiet luxury" look Pinterest users love.
+
+[SHOP_LUXURY_BATH_MATS](https://amzn.to/placeholder)
+
+## 2. Over-the-Toilet Storage That Looks Styled, Not Cluttered
+
+![Over-the-Toilet Storage](${shelvesImage})
+
+One of the most saved bathroom decor ideas on Pinterest right now is styled toilet shelving.
+
+Instead of empty walls, these shelves create balance and give you space to display baskets, towels, and decor — without feeling crowded.
+
+The key is styling:
+
+• woven baskets for warmth
+
+• wood or bamboo shelves
+
+• neutral color palette
+
+This single upgrade makes small bathrooms look intentionally designed.
+
+[SHOP_AESTHETIC_BATHROOM_SHELVING](https://amzn.to/placeholder)
+
+## 3. Spa-Style Bathroom Accessories That Feel Expensive
+
+![Spa-Style Bathroom Accessories](${accessoriesImage})
+
+Luxury hotels don't use plastic bottles — and neither should you.
+
+Matching bathroom accessories instantly elevate the entire sink area.
+
+Popular Pinterest favorites include:
+
+• ceramic or glass soap dispensers
+
+• minimalist trays
+
+• neutral toothbrush holders
+
+When everything matches, the bathroom automatically feels high-end.
+
+[SHOP_SPA_STYLE_BATHROOM_ACCESSORIES](https://amzn.to/placeholder)
+
+## 4. Soft Decor Touches That Create Calm
+
+![Soft Decor Touches](${accessories2Image})
+
+What separates a basic bathroom from a hotel-inspired one is atmosphere.
+
+Pinterest users love soft details like:
+
+• eucalyptus stems
+
+• small plants
+
+• amber bottles
+
+• subtle candles
+
+These pieces make the bathroom feel warm, relaxing, and intentional — even without changing fixtures.
+
+[SHOP_SOFT_LUXURY_BATHROOM_DECOR](https://amzn.to/placeholder)
+
+## 5. Towel Styling That Makes Everything Look Polished
+
+![Towel Styling](${towelsImage})
+
+Rolled or folded towels are one of the easiest ways to get that luxury look.
+
+Choose:
+
+• white, cream, or beige towels
+
+• simple towel racks or hooks
+
+• clean folding styles
+
+This instantly gives "five-star hotel bathroom" energy — especially when paired with baskets or shelving.
+
+[SHOP_ELEGANT_TOWEL_STORAGE](https://amzn.to/placeholder)
+
+## Final Thoughts
+
+![Final Thoughts](${finalImage})
+
+You don't need a remodel to make your bathroom feel beautiful.
+
+These hotel-style upgrades are small, affordable, and incredibly effective — which is exactly why Pinterest users keep saving them again and again.
+
+Save this list for later and start with just one upgrade — you'll be surprised how much it transforms your space 🤍`;
+
 export const articlesData = [
   {
     id: 'perfume-article', // Fixed ID so it updates instead of creating duplicates
@@ -425,6 +551,15 @@ export const articlesData = [
     slug: "soft-girl-glow-up-skincare-2026",
     content: softGirlGlowUpContent,
     imageUrl: banner3,
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'hotel-style-bathroom-upgrades',
+    title: "Hotel-Style Bathroom Upgrades That Instantly Make Your Space Look Expensive",
+    category: "Home",
+    slug: "hotel-style-bathroom-upgrades",
+    content: hotelBathroomUpgradesContent,
+    imageUrl: banner4, // Using banner3 as placeholder - can be updated with bathroom-specific image
     createdAt: new Date().toISOString(),
   },
 ];

@@ -13,8 +13,15 @@ function ArticleDetailPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // First check localStorage
     const articles = getArticles();
-    const foundArticle = articles.find(a => a.id === id);
+    let foundArticle = articles.find(a => a.id === id);
+    
+    // If not found in localStorage, check articlesData (for direct navigation)
+    if (!foundArticle) {
+      foundArticle = articlesData.find(a => a.id === id);
+    }
+    
     if (foundArticle) {
       setArticle(foundArticle);
     }

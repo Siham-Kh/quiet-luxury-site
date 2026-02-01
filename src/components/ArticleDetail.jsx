@@ -66,40 +66,55 @@ const ArticleDetail = ({ article, onBack }) => {
                 // Product card tracking
                 let currentProduct = null;
                 let productCards = [];
-                let sectionProductCards = null; // Store product cards separately for full-width rendering
+                let sectionProductCardsArray = null; // Store raw product cards array for splitting between columns
                 
-                // Helper function to render product cards
+                // Helper function to render a single product card
+                const renderProductCard = (product) => (
+                  <div key={product.key} className="group bg-white rounded-2xl border border-luxury-beige overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col h-full hover:-translate-y-1">
+                    {/* Product Image - Square, centered */}
+                    <div className="w-full aspect-square bg-gradient-to-br from-luxury-beige/30 to-luxury-cream/50 flex items-center justify-center overflow-hidden relative">
+                      <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
+                        <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-xs">
+                          <span className="text-center text-[10px] px-2">Image</span>
+                        </div>
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    
+                    {/* Product Content */}
+                    <div className="p-6 sm:p-7 flex flex-col flex-grow">
+                      <h3 className="text-lg sm:text-xl font-semibold text-luxury-charcoal mb-3 leading-snug tracking-tight">
+                        {product.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm sm:text-[15px] leading-relaxed mb-6 font-light flex-grow text-gray-700">
+                        {product.description}
+                      </p>
+                      <div className="mt-auto pt-2">
+                        {product.button}
+                      </div>
+                    </div>
+                  </div>
+                );
+                
+                // Helper function to render product cards in a single column
+                const renderProductCardsColumn = (cards, keyPrefix) => {
+                  if (cards.length === 0) return null;
+                  return (
+                    <div key={`product-cards-${keyPrefix}`} className="w-full mt-8">
+                      <div className="space-y-6">
+                        {cards.map((product) => renderProductCard(product))}
+                      </div>
+                    </div>
+                  );
+                };
+                
+                // Helper function to render product cards in full-width grid
                 const renderProductCards = (cards) => {
                   if (cards.length === 0) return null;
                   return (
                     <div key={`product-cards-${cards[0].key}`} className="w-full my-12 sm:my-16 col-span-full">
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-                        {cards.map((product) => (
-                          <div key={product.key} className="group bg-white rounded-2xl border border-luxury-beige overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col h-full hover:-translate-y-1">
-                            {/* Product Image - Square, centered */}
-                            <div className="w-full aspect-square bg-gradient-to-br from-luxury-beige/30 to-luxury-cream/50 flex items-center justify-center overflow-hidden relative">
-                              <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
-                                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-xs">
-                                  <span className="text-center text-[10px] px-2">Image</span>
-                                </div>
-                              </div>
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            </div>
-                            
-                            {/* Product Content */}
-                            <div className="p-6 sm:p-7 flex flex-col flex-grow">
-                              <h3 className="text-lg sm:text-xl font-semibold text-luxury-charcoal mb-3 leading-snug tracking-tight">
-                                {product.title}
-                              </h3>
-                              <p className="text-gray-600 text-sm sm:text-[15px] leading-relaxed mb-6 font-light flex-grow text-gray-700">
-                                {product.description}
-                              </p>
-                              <div className="mt-auto pt-2">
-                                {product.button}
-                              </div>
-                            </div>
-                          </div>
-                        ))}
+                        {cards.map((product) => renderProductCard(product))}
                       </div>
                     </div>
                   );
@@ -121,14 +136,57 @@ const ArticleDetail = ({ article, onBack }) => {
                     
                     // Store product cards separately if we have any
                     if (productCards.length > 0) {
-                      sectionProductCards = renderProductCards(productCards);
+                      sectionProductCardsArray = [...productCards]; // Store raw array
                       productCards = [];
                     }
                     
                     // If we have a previous section with content, render it
-                    if (inSection && (currentSectionContent.length > 0 || sectionProductCards)) {
-                      if (currentSectionImage) {
-                        // Section with image - use image+content layout, then product cards full-width below
+                    if (inSection && (currentSectionContent.length > 0 || sectionProductCardsArray)) {
+                      if (currentSectionImage && sectionProductCardsArray && sectionProductCardsArray.length > 0) {
+                        // Section with image and product cards - split cards between columns
+                        // Split cards: first half in left column, second half in right column
+                        // For odd numbers, put the extra one in the right column
+                        const midPoint = Math.floor(sectionProductCardsArray.length / 2);
+                        const leftColumnCards = sectionProductCardsArray.slice(0, midPoint);
+                        const rightColumnCards = sectionProductCardsArray.slice(midPoint);
+                        
+                        processedLines.push(
+                          <div key={`section-${i}`} className="my-12 sm:my-16 lg:my-20">
+                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
+                              <div className="lg:col-span-6 order-2 lg:order-1">
+                                <div className="lg:sticky lg:top-8">
+                                  <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 mb-8">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                                    <img 
+                                      src={currentSectionImage.src} 
+                                      alt={currentSectionImage.alt} 
+                                      className="w-full aspect-[9/16] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                      onError={(e) => {
+                                        e.target.style.display = 'none';
+                                      }}
+                                    />
+                                  </div>
+                                  {/* Product cards in left column (under image) */}
+                                  {renderProductCardsColumn(leftColumnCards, `left-${i}`)}
+                                </div>
+                              </div>
+                              <div className="lg:col-span-6 order-1 lg:order-2 min-w-0">
+                                <div className="space-y-4 sm:space-y-6 w-full overflow-hidden">
+                                  {currentSectionContent}
+                                  {currentSectionButtons.length > 0 && (
+                                    <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                                      {currentSectionButtons}
+                                    </div>
+                                  )}
+                                </div>
+                                {/* Product cards in right column (under text) */}
+                                {renderProductCardsColumn(rightColumnCards, `right-${i}`)}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      } else if (currentSectionImage) {
+                        // Section with image but no product cards - standard layout
                         processedLines.push(
                           <div key={`section-${i}`} className="my-12 sm:my-16 lg:my-20">
                             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 mb-8">
@@ -158,12 +216,6 @@ const ArticleDetail = ({ article, onBack }) => {
                                 </div>
                               </div>
                             </div>
-                            {/* Product cards rendered full-width below */}
-                            {sectionProductCards && (
-                              <div className="w-full">
-                                {sectionProductCards}
-                              </div>
-                            )}
                           </div>
                         );
                       } else {
@@ -179,15 +231,15 @@ const ArticleDetail = ({ article, onBack }) => {
                               )}
                             </div>
                             {/* Product cards rendered full-width below */}
-                            {sectionProductCards && (
+                            {sectionProductCardsArray && sectionProductCardsArray.length > 0 && (
                               <div className="w-full mt-8">
-                                {sectionProductCards}
+                                {renderProductCards(sectionProductCardsArray)}
                               </div>
                             )}
                           </div>
                         );
                       }
-                      sectionProductCards = null; // Reset for next section
+                      sectionProductCardsArray = null; // Reset for next section
                     }
                     
                     // If we have a previous closing section with content, render it
@@ -391,14 +443,57 @@ const ArticleDetail = ({ article, onBack }) => {
                 
                 // Store product cards separately if we have any
                 if (productCards.length > 0) {
-                  sectionProductCards = renderProductCards(productCards);
+                  sectionProductCardsArray = [...productCards]; // Store raw array
                   productCards = [];
                 }
                 
                 // Render last section if it exists (only if it's not a closing section)
-                if (inSection && !isClosingSection && (currentSectionContent.length > 0 || sectionProductCards)) {
-                  if (currentSectionImage) {
-                    // Section with image - use image+content layout, then product cards full-width below
+                if (inSection && !isClosingSection && (currentSectionContent.length > 0 || sectionProductCardsArray)) {
+                  if (currentSectionImage && sectionProductCardsArray && sectionProductCardsArray.length > 0) {
+                    // Section with image and product cards - split cards between columns
+                    // Split cards: first half in left column, second half in right column
+                    // For odd numbers, put the extra one in the right column
+                    const midPoint = Math.floor(sectionProductCardsArray.length / 2);
+                    const leftColumnCards = sectionProductCardsArray.slice(0, midPoint);
+                    const rightColumnCards = sectionProductCardsArray.slice(midPoint);
+                    
+                    processedLines.push(
+                      <div key="section-final" className="my-12 sm:my-16 lg:my-20">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
+                          <div className="lg:col-span-6 order-2 lg:order-1">
+                            <div className="lg:sticky lg:top-8">
+                              <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 mb-8">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                                <img 
+                                  src={currentSectionImage.src} 
+                                  alt={currentSectionImage.alt} 
+                                  className="w-full aspect-[9/16] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                  onError={(e) => {
+                                    e.target.style.display = 'none';
+                                  }}
+                                />
+                              </div>
+                              {/* Product cards in left column (under image) */}
+                              {renderProductCardsColumn(leftColumnCards, 'left-final')}
+                            </div>
+                          </div>
+                          <div className="lg:col-span-6 order-1 lg:order-2 min-w-0">
+                            <div className="space-y-4 sm:space-y-6 w-full overflow-hidden">
+                              {currentSectionContent}
+                              {currentSectionButtons.length > 0 && (
+                                <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                                  {currentSectionButtons}
+                                </div>
+                              )}
+                            </div>
+                            {/* Product cards in right column (under text) */}
+                            {renderProductCardsColumn(rightColumnCards, 'right-final')}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  } else if (currentSectionImage) {
+                    // Section with image but no product cards - standard layout
                     processedLines.push(
                       <div key="section-final" className="my-12 sm:my-16 lg:my-20">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 mb-8">
@@ -417,8 +512,8 @@ const ArticleDetail = ({ article, onBack }) => {
                               </div>
                             </div>
                           </div>
-                          <div className="lg:col-span-6 order-1 lg:order-2">
-                            <div className="space-y-4 sm:space-y-6">
+                          <div className="lg:col-span-6 order-1 lg:order-2 min-w-0">
+                            <div className="space-y-4 sm:space-y-6 w-full overflow-hidden">
                               {currentSectionContent}
                               {currentSectionButtons.length > 0 && (
                                 <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
@@ -428,12 +523,6 @@ const ArticleDetail = ({ article, onBack }) => {
                             </div>
                           </div>
                         </div>
-                        {/* Product cards rendered full-width below */}
-                        {sectionProductCards && (
-                          <div className="w-full">
-                            {sectionProductCards}
-                          </div>
-                        )}
                       </div>
                     );
                   } else {
@@ -449,9 +538,9 @@ const ArticleDetail = ({ article, onBack }) => {
                           )}
                         </div>
                         {/* Product cards rendered full-width below */}
-                        {sectionProductCards && (
+                        {sectionProductCardsArray && sectionProductCardsArray.length > 0 && (
                           <div className="w-full mt-8">
-                            {sectionProductCards}
+                            {renderProductCards(sectionProductCardsArray)}
                           </div>
                         )}
                       </div>

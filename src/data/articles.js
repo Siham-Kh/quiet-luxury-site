@@ -525,10 +525,29 @@ Popular Pinterest favorites include:
 
 When everything matches, the bathroom automatically feels high-end.
 
-[SHOP_BATHROOM_ACCESSORIES_1](https://amzn.to/placeholder)
-[SHOP_BATHROOM_ACCESSORIES_2](https://amzn.to/placeholder)
-[SHOP_BATHROOM_ACCESSORIES_3](https://amzn.to/placeholder)
-[SHOP_BATHROOM_ACCESSORIES_4](https://amzn.to/placeholder)
+🧴 **Ceramic Soap Dispenser Set**
+
+Elevate your sink area with a matching ceramic soap dispenser set that replaces plastic bottles and creates a cohesive, luxury look.
+
+[SHOP_CERAMIC_SOAP_DISPENSER_SET](https://amzn.to/4rpBJUc)
+
+🪨 **Stone or Marble Tray**
+
+A minimalist stone or marble tray keeps your accessories organized and adds instant sophistication to any bathroom counter.
+
+[SHOP_STONE_OR_MARBLE_TRAY](https://amzn.to/3M8aqyB)
+
+🕯️ **Amber Glass Candle**
+
+Soft, warm lighting from an amber glass candle creates the perfect spa-like atmosphere and adds a touch of quiet luxury.
+
+[SHOP_AMBER_GLASS_CANDLE](https://amzn.to/4bYZKwQ)
+
+🌸 **Decorative Glass Bottle or Vase**
+
+A decorative glass bottle or vase adds elegance and can hold eucalyptus stems or small flowers for that boutique hotel feel.
+
+[SHOP_DECORATIVE_GLASS_BOTTLE_OR_VASE](https://amzn.to/3ZbDus0)
 
 ## 4. Soft Decor Touches That Create Calm
 
@@ -550,9 +569,29 @@ This is one of the fastest ways to make a small bathroom feel intentional.
 
 These pieces make the bathroom feel warm, relaxing, and intentional — even without changing fixtures.
 
-[SHOP_SOFT_BATHROOM_DECOR_1](https://amzn.to/placeholder)
-[SHOP_SOFT_BATHROOM_DECOR_2](https://amzn.to/placeholder)
-[SHOP_SOFT_BATHROOM_DECOR_3](https://amzn.to/placeholder)
+🌿 **Dried Eucalyptus Stem**
+
+Natural preserved eucalyptus stems add instant spa energy and a subtle, calming fragrance. Perfect for hanging in the shower or displaying in a vase.
+
+[SHOP_DRIED_EUCALYPTUS_STEM](https://amzn.to/4qMj05j)
+
+✨ **Minimalist Ceramic Bathroom Decor**
+
+Clean, simple ceramic pieces in neutral tones create a calm, uncluttered aesthetic that feels both modern and timeless.
+
+[SHOP_MINIMALIST_CERAMIC_BATHROOM_DECOR](https://amzn.to/3NQeQuM)
+
+🧺 **Neutral Woven Decorative Basket**
+
+Woven baskets in beige or natural tones add warmth and texture while providing stylish storage for towels, toiletries, or small plants.
+
+[SHOP_NEUTRAL_WOVEN_DECORATIVE_BASKET](https://amzn.to/4qS575u)
+
+🛁 **Spa Linen Hand Towels Cream**
+
+Soft, cream-colored linen hand towels that feel luxurious and look elegant. These instantly elevate the bathroom's aesthetic and create that five-star hotel feel.
+
+[SHOP_SPA_LINEN_HAND_TOWELS_CREAM](https://amzn.to/3LNZR3Q)
 
 ## 5. Towel Styling That Makes Everything Look Polished
 
@@ -570,10 +609,29 @@ Choose:
 
 This instantly gives "five-star hotel bathroom" energy — especially when paired with baskets or shelving.
 
-[SHOP_LUXURY_TOWELS_1](https://amzn.to/placeholder)
-[SHOP_LUXURY_TOWELS_2](https://amzn.to/placeholder)
-[SHOP_LUXURY_TOWELS_3](https://amzn.to/placeholder)
-[SHOP_LUXURY_TOWELS_4](https://amzn.to/placeholder)
+🏷️ **Towel Labels Spa Bathroom**
+
+Minimalist waterproof labels for organizing towels and bathroom essentials. Clean, simple labels that keep everything organized while maintaining that quiet luxury aesthetic.
+
+[SHOP_TOWEL_LABELS_SPA_BATHROOM](https://amzn.to/4a2E28A)
+
+🪝 **Towel Holder for Bathroom Wall**
+
+A sleek, minimalist towel holder that keeps towels neatly displayed and easily accessible. Perfect for creating that hotel-style towel presentation.
+
+[SHOP_TOWEL_HOLDER_FOR_BATHROOM_WALL](https://amzn.to/4rhSEYO)
+
+🪜 **Oversized Towel Ladder Bathroom**
+
+An elegant towel ladder that provides both function and style. Perfect for displaying multiple towels in a way that looks intentional and luxurious.
+
+[SHOP_OVERSIZED_TOWEL_LADDER_BATHROOM](https://amzn.to/4k94gep)
+
+💡 **LED Bathroom Vanity Mirror with Light**
+
+A modern LED vanity mirror that provides perfect lighting while adding a touch of contemporary luxury to your bathroom space.
+
+[SHOP_LED_BATHROOM_VANITY_MIRROR_WITH_LIGHT](https://amzn.to/4qbxH0G)
 
 ## Final Thoughts
 
